@@ -1,4 +1,4 @@
 # DatamatikerGit
 
-Aleksander Willersrud \n
+Aleksander Willersrud
 cph-aw132@cphbusiness.dk
