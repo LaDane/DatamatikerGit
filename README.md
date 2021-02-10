@@ -1,2 +1,4 @@
 # DatamatikerGit
-School related files
+
+Aleksander Willersrud
+cph-aw132@cphbusiness.dk
