@@ -1,13 +1,13 @@
 public class Positions {
 
 
-    int[] randomStartPosition(int minDistance) {
+    int[] randomPosition(int minDistance) {
         Boolean positionNotFound = true;
         while (positionNotFound) {
-            int randX = int(random(0, gridLength));
-            int randY = int(random(0, gridLength));
+            int randX = int(random(5, gridLength-5));
+            int randY = int(random(5, gridLength-5));
 
-            if (measureDistance('x', player.x, randX) >= minDistance && measureDistance('y', player.y, randY) >= minDistance) {
+            if ((measureDistance('x', player.x, randX) + measureDistance('y', player.y, randY)) / 2 >= minDistance) {
                 positionNotFound = false;
                 int[] spawnPositions = {randX, randY};
                 return spawnPositions;
@@ -17,12 +17,57 @@ public class Positions {
     }
 
 
-    int[] newPosition(Boolean moveTowardsPlayer, int difficulty, int x, int y) {
-        int[] newPos = {x, y};
+    Boolean moveIsRandom(int difficulty) {
         int randomMovementChance = Math.round(random(1, difficulty));
         Boolean moveRandom = false;
+        
+        if (randomMovementChance == difficulty) moveRandom = true;
+        return moveRandom;
+    }
 
-        if (randomMovementChance == difficulty) {                                              // the higher the difficulty, the lower the chance of random movement    
+
+    int[] aStarPathfinding(Enemy enemy, Food food, int difficulty) {
+        int[] newPos = {0, 0};
+        
+        if (enemy != null) {
+            if (moveIsRandom(difficulty)) newPos = randomNewPosition(enemy.x, enemy.y);
+            else {
+                pathfind.findPath(enemy, null, enemy.x, enemy.y, player.x, player.y);
+            
+                try {
+                    int[] enemyNewPos = {enemy.enemyPath.get(0).x, enemy.enemyPath.get(0).y};
+                    newPos = enemyNewPos;
+                } 
+                catch(Exception e) {
+                    return oldPathfinding(true, difficulty, enemy.x, enemy.y);
+                }
+            }
+        }
+        
+        if (food != null) {
+            if (moveIsRandom(difficulty)) newPos = randomNewPosition(food.x, food.y);
+            else {
+                pathfind.findPath(null, food, food.x, food.y, food.targetX, food.targetY);
+            
+                try {
+                    int[] foodNewPos = {food.foodPath.get(0).x, food.foodPath.get(0).y};
+                    newPos = foodNewPos;
+                } 
+                catch(Exception e) {
+                    return oldPathfinding(false, difficulty, food.x, food.y);
+                }
+            }        
+        }
+        return newPos;
+    }
+
+
+    int[] oldPathfinding(Boolean moveTowardsPlayer, int difficulty, int x, int y) {
+        int[] newPos = {x, y};
+        //int randomMovementChance = Math.round(random(1, difficulty));
+        Boolean moveRandom = false;
+        
+        if (moveIsRandom(difficulty)) {                                                       // the higher the difficulty, the lower the chance of random movement    
             moveRandom = true;
             newPos = randomNewPosition(x, y);
         }

@@ -27,6 +27,16 @@ void updateEntities() {
 void updateEnemies() {
     for (int i = 0; i < enemies.length; i++) {
         enemies[i].moveEnemy();
+
+        //try {
+        //    pathfind.findPath(enemies[i], null, enemies[i].x, enemies[i].y, player.x, player.y);
+        //    enemies[i].x = enemies[i].enemyPath.get(0).x;
+        //    enemies[i].y = enemies[i].enemyPath.get(0).y;
+            
+        //} catch(Exception e) {
+        //    println(e);
+        //}
+        
         grid[enemies[i].x][enemies[i].y] = enemies[i].type;
     }
 }
@@ -34,6 +44,9 @@ void updateEnemies() {
 
 void updateFoods() {
     for (int i = 0; i < foods.length; i++) {
+        foods[i].checkDistanceToPlayerPos();
+        foods[i].checkDistanceToTargetPos();
+        
         foods[i].moveFood();
         grid[foods[i].x][foods[i].y] = foods[i].type;
     }
@@ -43,10 +56,18 @@ void updateFoods() {
 void drawBoard() {
     for (int x = 0; x < grid.length; x++) {
         for (int y = 0; y < grid[0].length; y++) {
-            fill(getColorFromType(grid[x][y]));
-            stroke(200);
-            rectMode(CORNER);
-            rect(x * gridSquareSize, y * gridSquareSize, gridSquareSize, gridSquareSize);
+            //fill(getColorFromType(grid[x][y]));
+            //stroke(200);
+            //rectMode(CORNER);
+            //rect(x * gridSquareSize, y * gridSquareSize, gridSquareSize, gridSquareSize);
+
+
+            if (grid[x][y] == 3) {
+                image(groundSpr, x * gridSquareSize, y * gridSquareSize, gridSquareSize, gridSquareSize);        // draw ground under player
+            }
+
+            PImage sprite = getSpriteFromType(grid[x][y]);
+            image(sprite, x * gridSquareSize, y * gridSquareSize, gridSquareSize, gridSquareSize);
         }
     }
 }

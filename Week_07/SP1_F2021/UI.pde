@@ -63,7 +63,7 @@ void displayGameOver() {
     highScore = player.score;
 
     rectMode(CORNERS);
-    fill(140, 140, 140, 20);
+    fill(140, 140, 140, 40);
     rect(100, 100, width - 100, height - 100);        // game over background
     textSize(80); 
     fill(0, 0, 0, 255);

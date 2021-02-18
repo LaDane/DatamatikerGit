@@ -9,6 +9,9 @@ class Enemy {
 
     /* GFX */
     int type = 1;
+    
+    /* Pathfinding */
+    ArrayList<PathfindNode> enemyPath = new ArrayList<PathfindNode>();
 
     /* Components */
     Player player;
@@ -23,7 +26,7 @@ class Enemy {
 
 
     void spawnEnemy() {
-        int[] spawnPoints = positions.randomStartPosition(minDistanceToPlayer);
+        int[] spawnPoints = positions.randomPosition(minDistanceToPlayer);
         x = spawnPoints[0];
         y = spawnPoints[1];
     }
@@ -31,19 +34,23 @@ class Enemy {
 
     void moveEnemy() {
         int[] newPos;
-        newPos = positions.newPosition(true, difficulty, x, y);
-        // int newPosX = newPos[0];
-        // int newPosY = newPos[1];
-
-        // newPos = positions.checkPositionNotOccupied(x, y, newPosX, newPosY);        not working
-
-        // newPosX = newPos[0];
-        // newPosY = newPos[1];        
+        
+        if (useAstarPathfinding) newPos = positions.aStarPathfinding(this, null, difficulty);
+        else newPos = positions.oldPathfinding(true, difficulty, x, y);
         
         x = newPos[0];
         y = newPos[1];        
 
+        /* not working */
+        
+        // int newPosX = newPos[0];
+        // int newPosY = newPos[1];
 
+        // newPos = positions.checkPositionNotOccupied(x, y, newPosX, newPosY);        
+
+        // newPosX = newPos[0];
+        // newPosY = newPos[1];        
+        
 
         //Boolean checkingIfPosOccupied = true;
 

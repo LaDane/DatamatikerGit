@@ -58,6 +58,6 @@ class Player {
     
     
     void checkLives() {
-        if (HP <= 0) gameOver = true;
+        if (HP <= 0) gameOver = false;
     }
 }
