@@ -20,35 +20,29 @@ void setup() {
 }
 
 void draw() {
-  frameRate(1);    // cheesy way of delaying light updates
-
+  frameRate(1);                 // cheesy way of delaying light updates
   rectMode(CORNERS);
   fill(bg);
-  rect(border, border, width - border, height - border);                      // background
+  rect(border, border, width - border, height - border);           // background
 
   fill(grey);
-  for (int i = circleSpacing; i <= circleSpacing * 3; i += circleSpacing) {   // 3 grey circles that can light up
+  for (int i = circleSpacing; i <= circleSpacing * 3; i += circleSpacing)     // 3 grey circles that can light up
     ellipse(width / 2, i, circleSize, circleSize);
-  }
-
+    
   ChangeLights();
 }
 
 void ChangeLights() {
-  if (lightStage == 0) {              // all lights are off, turn on green light
+  if (lightStage == 0)            // all lights are off, turn on green light
     fill(green);
-  } else if (lightStage == 1) {       // green light is active, turn off green, turn on yellow
+  else if (lightStage == 1)       // green light is active, turn off green, turn on yellow
     fill(yellow);
-  } else if (lightStage == 2) {       // yellow light is active, turn off yellow, turn on red
-    fill(red);
-  } 
+  else if (lightStage == 2)       // yellow light is active, turn off yellow, turn on red
+    fill(red); 
 
   lightStage++;
-  
-  if (lightStage > 3) {               // we only have 3 stages, reset counter
-    lightStage = 0;
-    return;
-  }
-  
   ellipse(width / 2, circleSpacing * lightStage, circleSize, circleSize);
+  
+  if (lightStage > 2)             // we only have 3 stages, reset counter
+    lightStage = 0;
 }

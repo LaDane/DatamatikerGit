@@ -9,29 +9,25 @@
 
 
 
-int input = 20;
+int input = -20;
 
 for (int i = 0; i <= Math.abs(input); i++) {
   Boolean isHalf = false;
   String prntStr = "";
   
-  if (i == Math.abs(input) / 2) {
+  if (i == Math.abs(input) / 2)
     isHalf = true;
-  }
   
-  if (input < 0) {
+  if (input < 0 && i != 0)
     prntStr += "-";
-  }
   
-  if (i == 6 && input > 0) {
+  if (i == 6 && input > 0)
     prntStr +="six";
-  } else {
+  else
     prntStr += i;
-  }
   
   println(prntStr);
   
-  if (isHalf) {
+  if (isHalf)
     println("HALF!");
-  } 
 }
