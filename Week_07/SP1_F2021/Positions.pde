@@ -4,19 +4,35 @@ public class Positions {
     int[] randomPosition(int minDistance) {
         Boolean positionNotFound = true;
         while (positionNotFound) {
-            int randX = int(random(5, gridLength-5));
-            int randY = int(random(5, gridLength-5));
+            int randX = int(random(2, gridLength -3));
+            int randY = int(random(2, gridLength -3));
 
-            if ((measureDistance('x', player.x, randX) + measureDistance('y', player.y, randY)) / 2 >= minDistance) {
-                positionNotFound = false;
+            if ((measureDistance('x', player.x, randX) + measureDistance('y', player.y, randY)) / 2 <= minDistance) {        // check distance to player
+                continue;
+            } else {
 
-                if (grid[randX][randY] != 4) {
-                    int[] randomPositions = {randX, randY};
-                    return randomPositions;
-                } else continue;
+                if (grid[randX][randY] != 4) {                                // check position is not wall
+                    
+                    Boolean areSurroundingTilesWalls = false;                 // check position is open area (3x3)
+                    for (int x = -1; x <= 1; x++) {
+                        for (int y = -1; y <= 1; y++) {
+                            if (grid[randX + x][randY +y] == 4) areSurroundingTilesWalls = true;
+                        }
+                    }
+                    
+                    if (!areSurroundingTilesWalls) {
+                        int[] randomPositions = {randX, randY};
+                        positionNotFound = false;
+                        return randomPositions;                    
+                    } else continue;
+                    
+
+                } else {
+                    continue;
+                }
             }
         }
-        int[] fail = {20, 20};
+        int[] fail = {1, 1};
         return fail;
     }
 
@@ -113,7 +129,10 @@ public class Positions {
             if (grid[newPos[0]][newPos[1]] != 4) {
                 generatingClosePosition = false;
                 break;
-            } else continue;
+            } else {
+                // println("randomClosePosition failed, trying again");
+                continue;
+            }
         }
         return newPos;
     }

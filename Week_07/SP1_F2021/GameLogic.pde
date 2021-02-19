@@ -3,12 +3,11 @@
 void playGame() {
     clearBoard();                // reset board
     updateEntities();            // update player board GFX
-    updateEnemies();             // update enemy positions and enemy board GFX
+    updateEnemies();             // update enemy positions and enemy board GFX        // FAILING HERE SOMETIMES
     updateFoods();               // update food positions and food GFX
     resolveCollisions();         // check for player collisions
     drawBoard();                 // draw the board
 }
-
 
 void clearBoard() {
     for (int x = 0; x < grid.length; x++) {
@@ -27,7 +26,7 @@ void updateEntities() {
 
 void updateEnemies() {
     for (int i = 0; i < enemies.length; i++) {
-        enemies[i].moveEnemy();
+        enemies[i].moveEnemy();                                    // FAILING HERE SOMETIMES
         grid[enemies[i].x][enemies[i].y] = enemies[i].type;
     }
 }

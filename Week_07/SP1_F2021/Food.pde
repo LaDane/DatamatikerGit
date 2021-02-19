@@ -39,7 +39,8 @@ class Food {
 
 
     void moveFood() {             // move food away from player
-        int[] newPos = positions.randomClosePosition(x, y);
+        // int[] newPos = positions.randomClosePosition(x, y);
+        int[] newPos;
 
         Boolean findingNewPos = true;
         while (findingNewPos) {

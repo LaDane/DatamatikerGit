@@ -2,7 +2,7 @@ class Enemy {
     /* Position stuff */
     int x; 
     int y;
-    int minDistanceToPlayer;
+    int minDistanceToPlayer = 17;
 
     /* Difficulty */
     int difficulty;
@@ -33,11 +33,13 @@ class Enemy {
 
 
     void moveEnemy() {
-        int[] newPos = positions.randomClosePosition(x, y);
+        int[] newPos;
 
         Boolean findingNewPos = true;
         while (findingNewPos) {
-            if (useAstarPathfinding) newPos = positions.aStarPathfinding(this, null, difficulty);
+            if (useAstarPathfinding) {
+                newPos = positions.aStarPathfinding(this, null, difficulty);
+            }
             else newPos = positions.oldPathfinding(true, difficulty, x, y);
 
             if (grid[newPos[0]][newPos[1]] != 4) {
@@ -46,7 +48,10 @@ class Enemy {
                 x = newPos[0];
                 y = newPos[1];                 
                 break;
-            } else continue;
+            } else {
+                println("findingNewPos = false, restarting while loop");
+                continue;
+            }
         }
     }
 }
