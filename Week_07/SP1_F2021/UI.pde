@@ -33,21 +33,7 @@ void uiBackground() {
 }
 
 
-void displayScore() {
-    String s = "SCORE\n"+player.score;
-    textAlign(CENTER, CENTER);
-    textSize(32);    
-    fill(0);
-    text(s, width - 140, 450);        // middle
-    // text(s, width - 140, 270);     // top
-}
-
-
 void displayLives() {
-    // String s = "LIVES\n"+player.HP;
-    //textSize(32); 
-    //fill(0);
-    //text(s, width - 140, 450);
     int heartX = width - 240;
     for (int i = 0; i < player.HP; i++) {
         image(heartSpr, heartX, 220, 60, 60);
@@ -65,6 +51,15 @@ void displayBombs() {
 }
 
 
+void displayScore() {
+    String s = "SCORE\n"+player.score;
+    textAlign(CENTER, CENTER);
+    textSize(45);    
+    fill(0);
+    text(s, width - 140, 450);        // middle
+}
+
+
 void updateHighScore() {
     if (player.score > highScore) {
         highScore = player.score;
@@ -74,7 +69,7 @@ void updateHighScore() {
 
 void displayHighScore() {
     String s = "HIGH SCORE\n"+highScore;
-    textSize(32);
+    textSize(45);
     fill(0);
     text(s, width - 140, 620);
 }
@@ -87,9 +82,9 @@ void displayGameOver() {
     fill(140, 140, 140, 40);
     rect(100, 100, width - 100, height - 100);        // game over background
     
-    textSize(80); 
+    textSize(100); 
     fill(0, 0, 0, 255);
-    String s = "Game Over!\n\nYour score was\n"+player.score;
+    String s = "Game Over\n\nYour score was\n"+player.score;
     text(s, width / 2, (height / 2) - 100);
 }
 
@@ -105,7 +100,7 @@ void displayReplayButton() {
 
     String s = "Play again";
     fill(0);
-    textSize(60);
+    textSize(80);
     text(s, width / 2, (height / 2) + 240);
 }
 
@@ -119,13 +114,14 @@ void mousePressed() {
 }
 
 void resetGame() {
-    rectMode(CORNERS);
-    fill(200);
-    rect(0, 0, width, height);
-    
-    gameOver = false;
-    gamePaused = false;
-    setup();
+
+    for (int x = 0; x < grid.length; x++) {
+        for (int y = 0; y < grid[0].length; y++) {
+            grid[x][y] = 0;
+        }
+    }
+    gameIteration = (int)random(100);
+    init();
 }
 
 

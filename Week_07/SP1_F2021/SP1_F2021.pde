@@ -11,7 +11,8 @@ int gridSquareSize = 20;
 int[][] grid = new int[gridLength][gridLength];
 
 /* Game settings */
-int frames = 8;
+int frames = 10;
+int gameIteration = 0;         // used for creating unique wall generation every time a player restarts
 Boolean gamePaused = false;
 Boolean gameOver = false;
 Boolean useAstarPathfinding = true;
@@ -56,6 +57,10 @@ int explosionTickLength = 7;
 float wallPerlinCap = 0.62;
 float wallPerlinScale = 0.3;
 
+/* Fonts */
+PFont arcadeIn;
+PFont arcadeOut;
+
 /* Components */
 Player player;
 Enemy[] enemies = new Enemy[amountOfEnemies];
@@ -73,6 +78,20 @@ void setup() {
     size(1200, 921);        // 1100, 921
     frameRate(frames);
 
+    /* Load Fonts */
+    arcadeIn = createFont("arcadeIn.ttf", 100, false);
+    arcadeOut = createFont("arcadeOut.ttf", 32);
+    textFont(arcadeIn);
+
+    /* Load sprites */
+    assignSprites();
+
+    init();
+}
+
+
+void init() {
+   
     /* Create walls with perlin noise */
     walls = new Walls(wallPerlinCap, wallPerlinScale);
     walls.wallGeneration();
@@ -95,14 +114,14 @@ void setup() {
         boxs[i].spawnBox();
     }
     
-
-    /* Load sprites */
-    assignSprites();
-
     /* Setup A star pathfinding */
     pathfindGrid = new PathfindGrid(gridLength);
     pathfindGrid.createGrid();
     pathfind = new Pathfind(pathfindGrid);
+    
+    background(190);
+    gameOver = false;
+    gamePaused = false;
 }
 
 

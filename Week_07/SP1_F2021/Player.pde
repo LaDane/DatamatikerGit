@@ -76,7 +76,7 @@ class Player {
 
     void takeDamage() {
         HP--;
-        // checkLives();            // enable to have game over screen
+        checkLives();            // enable to have game over screen
     }
     
     
