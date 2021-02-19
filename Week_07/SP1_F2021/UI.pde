@@ -1,14 +1,22 @@
 /* All ui stuff goes in here */
 
+int[] playAgainButton = new int[4];
+
+
+
 void updateUI() {
     uiBackground();
     displayScore();
     displayLives();
+    displayBombs();
     updateHighScore();
     displayHighScore();
 }
 
 void gameOverUI() {
+    int[] _playAgainButton = {(width / 2) - 200, (height / 2) + 200, (width / 2) + 200, (height / 2) + 300};
+    playAgainButton = _playAgainButton;
+    
     displayGameOver();
     displayReplayButton();
 }
@@ -44,6 +52,15 @@ void displayLives() {
     for (int i = 0; i < player.HP; i++) {
         image(heartSpr, heartX, 220, 60, 60);
         heartX += 70;
+    }
+}
+
+
+void displayBombs() {
+    int bombX = width - 240;
+    for (int i = 0; i < player.bombs; i++) {
+        image(bombSpr, bombX, 300, 60, 60);
+        bombX += 70;
     }
 }
 

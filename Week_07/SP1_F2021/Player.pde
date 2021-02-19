@@ -9,15 +9,21 @@ class Player {
     int HP;
     int score;
     
+    /* Bombs */
+    int bombs;
+    int maxB;
+    
     /* GFX */
     int type = 3; 
 
     /* Constructor */
-    Player(int x, int y, int playerHP, int playerScore) {
+    Player(int x, int y, int playerHP, int playerScore, int startingBombs, int maxBombs) {
         this.x = x;
         this.y = y;
         this.HP = playerHP;
         this.score = playerScore; 
+        this.bombs = startingBombs;
+        this.maxB = maxBombs;
     }
 
     /* Movement */
@@ -70,7 +76,7 @@ class Player {
 
     void takeDamage() {
         HP--;
-        if (HP <= 0) HP = 0;
+        // checkLives();            // enable to have game over screen
     }
     
     
@@ -80,6 +86,26 @@ class Player {
     
     
     void checkLives() {
-        if (HP <= 0) gameOver = false;
+        if (HP <= 0) gameOver = true;
     }
+    
+    
+    Boolean canCarryMoreBombs() {
+        if (bombs >= maxB) return false;
+        else return true;
+    }
+    
+    
+    void increaseBombs() {
+        bombs++;
+    }
+    
+    
+    void spawnBomb() {
+        if (bombs > 0) {
+            Bombs bomb = new Bombs(x, y, bombExplodeTick);
+            activeBombs.add(bomb);
+            bombs--;
+        }
+    }    
 }

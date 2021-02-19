@@ -6,6 +6,9 @@ void keyPressed() {
     if (key == 'w') movingUp = true;       // move up
     if (key == 's') movingDown = true;     // move down
 
+    if (key == ' ') player.spawnBomb();    // spawn bomb with space
+
+    if (key == BACKSPACE) gameOver = true;
     if (key == 'z' && debug) printIntArray(grid);    // show debug log in console
 }
 

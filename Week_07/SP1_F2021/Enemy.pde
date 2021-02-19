@@ -49,7 +49,7 @@ class Enemy {
                 y = newPos[1];                 
                 break;
             } else {
-                println("findingNewPos = false, restarting while loop");
+                // println("findingNewPos = false, restarting while loop");
                 continue;
             }
         }

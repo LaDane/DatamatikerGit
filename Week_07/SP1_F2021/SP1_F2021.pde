@@ -11,8 +11,7 @@ int gridSquareSize = 20;
 int[][] grid = new int[gridLength][gridLength];
 
 /* Game settings */
-int frames = 9;
-int[] playAgainButton = new int[4];
+int frames = 8;
 Boolean gamePaused = false;
 Boolean gameOver = false;
 Boolean useAstarPathfinding = true;
@@ -39,14 +38,29 @@ int distanceToFood = 10;         // min distance used when generating random foo
 int foodDifficulty = 3;         // the higher the difficulty, the lower the chance of random food movement
 int safeDistance = 6;           // the distance a food will have to player before moving freely
 
+/* Box settings */
+int amountOfBoxs = 2;
+int distanceToBox = 15;
+
+/* Bomb settings */
+ArrayList<Bombs> activeBombs = new ArrayList<Bombs>();
+int startingBombs = 2;
+int maxBombs = 3;
+int bombExplodeTick = 12;
+
+/* Explosion settings */
+ArrayList<Explosions> activeExplosions = new ArrayList<Explosions>();
+int explosionTickLength = 7;
+
 /* Terrain settings */
-float wallPerlinCap = 0.55;
-float wallPerlinScale = 0.2;
+float wallPerlinCap = 0.62;
+float wallPerlinScale = 0.3;
 
 /* Components */
 Player player;
 Enemy[] enemies = new Enemy[amountOfEnemies];
 Food[] foods = new Food[amountOfFood];
+Box[] boxs = new Box[amountOfBoxs];
 
 Pathfind pathfind;
 PathfindGrid pathfindGrid;
@@ -63,10 +77,8 @@ void setup() {
     walls = new Walls(wallPerlinCap, wallPerlinScale);
     walls.wallGeneration();
 
-    int[] _playAgainButton = {(width / 2) - 200, (height / 2) + 200, (width / 2) + 200, (height / 2) + 300};
-    playAgainButton = _playAgainButton;
-
-    player = new Player((int)gridLength/2, (int)gridLength/2, playerHP, playerScore);    // player starts in "middle" of grid
+    /* Create game objects */
+    player = new Player((int)gridLength/2, (int)gridLength/2, playerHP, playerScore, startingBombs, maxBombs);    // player starts in "middle" of grid
 
     for (int i = 0; i < enemies.length; i++) {          
         enemies[i] = new Enemy(player, distanceToEnemy, enemyDifficulty);                // create the enemies
@@ -77,6 +89,12 @@ void setup() {
         foods[i] = new Food(player, distanceToFood, foodDifficulty, safeDistance);       // create the food
         foods[i].spawnFood();                                                            // generate a random start position for food
     }
+    
+    for (int i = 0; i < boxs.length; i++) {
+        boxs[i] = new Box(distanceToBox);
+        boxs[i].spawnBox();
+    }
+    
 
     /* Load sprites */
     assignSprites();
@@ -90,6 +108,7 @@ void setup() {
 
 void draw() {
     if (!gamePaused) {
+        
         /* Handle player movement */
         if (movingLeft) player.moveLeft();
         if (movingRight) player.moveRight();
@@ -101,9 +120,6 @@ void draw() {
 
         /* UI */
         updateUI(); 
-
-        /* Game settings */
-        player.checkLives();
     }
 
     if (gameOver) {

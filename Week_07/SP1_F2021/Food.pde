@@ -74,7 +74,7 @@ class Food {
 
 
     void checkDistanceToTargetPos() {
-        if ((positions.measureDistance('x', x, targetX) + positions.measureDistance('y', y, targetY)) / 2 <= 4) {
+        if ((positions.measureDistance('x', x, targetX) + positions.measureDistance('y', y, targetY)) / 2 <= 5) {
             generateTargetPos();
         }
     }
