@@ -18,6 +18,7 @@ void uiBackground() {
     rectMode(CORNERS);
     fill(150);
     rect(width - 240, 190, width - 20, height - 210);        // shadow
+    
     stroke(150);
     fill(180);
     rect(width - 250, 200, width - 30, height - 200);
@@ -28,18 +29,22 @@ void displayScore() {
     String s = "SCORE\n"+player.score;
     textAlign(CENTER, CENTER);
     textSize(32);    
-
     fill(0);
-    text(s, width - 140, 270);
+    text(s, width - 140, 450);        // middle
+    // text(s, width - 140, 270);     // top
 }
 
 
 void displayLives() {
-    String s = "LIVES\n"+player.HP;
-    textSize(32); 
-
-    fill(0);
-    text(s, width - 140, 450);
+    // String s = "LIVES\n"+player.HP;
+    //textSize(32); 
+    //fill(0);
+    //text(s, width - 140, 450);
+    int heartX = width - 240;
+    for (int i = 0; i < player.HP; i++) {
+        image(heartSpr, heartX, 220, 60, 60);
+        heartX += 70;
+    }
 }
 
 
@@ -53,7 +58,6 @@ void updateHighScore() {
 void displayHighScore() {
     String s = "HIGH SCORE\n"+highScore;
     textSize(32);
-
     fill(0);
     text(s, width - 140, 620);
 }
@@ -65,6 +69,7 @@ void displayGameOver() {
     rectMode(CORNERS);
     fill(140, 140, 140, 40);
     rect(100, 100, width - 100, height - 100);        // game over background
+    
     textSize(80); 
     fill(0, 0, 0, 255);
     String s = "Game Over!\n\nYour score was\n"+player.score;
@@ -105,8 +110,6 @@ void resetGame() {
     gamePaused = false;
     setup();
 }
-
-
 
 
 

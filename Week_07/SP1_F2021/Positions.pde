@@ -9,18 +9,22 @@ public class Positions {
 
             if ((measureDistance('x', player.x, randX) + measureDistance('y', player.y, randY)) / 2 >= minDistance) {
                 positionNotFound = false;
-                int[] spawnPositions = {randX, randY};
-                return spawnPositions;
+
+                if (grid[randX][randY] != 4) {
+                    int[] randomPositions = {randX, randY};
+                    return randomPositions;
+                } else continue;
             }
         }
-        return null;
+        int[] fail = {20, 20};
+        return fail;
     }
 
 
     Boolean moveIsRandom(int difficulty) {
         int randomMovementChance = Math.round(random(1, difficulty));
         Boolean moveRandom = false;
-        
+
         if (randomMovementChance == difficulty) moveRandom = true;
         return moveRandom;
     }
@@ -28,12 +32,12 @@ public class Positions {
 
     int[] aStarPathfinding(Enemy enemy, Food food, int difficulty) {
         int[] newPos = {0, 0};
-        
-        if (enemy != null) {
-            if (moveIsRandom(difficulty)) newPos = randomNewPosition(enemy.x, enemy.y);
+
+        if (enemy != null) {                                                              // A* enemy algo
+            if (moveIsRandom(difficulty)) newPos = randomClosePosition(enemy.x, enemy.y);
             else {
                 pathfind.findPath(enemy, null, enemy.x, enemy.y, player.x, player.y);
-            
+
                 try {
                     int[] enemyNewPos = {enemy.enemyPath.get(0).x, enemy.enemyPath.get(0).y};
                     newPos = enemyNewPos;
@@ -43,12 +47,12 @@ public class Positions {
                 }
             }
         }
-        
-        if (food != null) {
-            if (moveIsRandom(difficulty)) newPos = randomNewPosition(food.x, food.y);
+
+        if (food != null) {                                                                // A* food algo
+            if (moveIsRandom(difficulty)) newPos = randomClosePosition(food.x, food.y);
             else {
                 pathfind.findPath(null, food, food.x, food.y, food.targetX, food.targetY);
-            
+
                 try {
                     int[] foodNewPos = {food.foodPath.get(0).x, food.foodPath.get(0).y};
                     newPos = foodNewPos;
@@ -56,7 +60,7 @@ public class Positions {
                 catch(Exception e) {
                     return oldPathfinding(false, difficulty, food.x, food.y);
                 }
-            }        
+            }
         }
         return newPos;
     }
@@ -64,12 +68,11 @@ public class Positions {
 
     int[] oldPathfinding(Boolean moveTowardsPlayer, int difficulty, int x, int y) {
         int[] newPos = {x, y};
-        //int randomMovementChance = Math.round(random(1, difficulty));
         Boolean moveRandom = false;
-        
+
         if (moveIsRandom(difficulty)) {                                                       // the higher the difficulty, the lower the chance of random movement    
             moveRandom = true;
-            newPos = randomNewPosition(x, y);
+            newPos = randomClosePosition(x, y);
         }
 
         if (!moveRandom && moveTowardsPlayer) {                                                // enemy algo
@@ -95,13 +98,23 @@ public class Positions {
     }
 
 
-    int[] randomNewPosition(int x, int y) {
+    int[] randomClosePosition(int x, int y) {
+        Boolean generatingClosePosition = true;
         int[] newPos = {x, y};
-        int randomDirection = Math.round(random(1, 4));
-        if (randomDirection == 1) newPos = checkPosition('x', 1, x, y);
-        if (randomDirection == 2) newPos = checkPosition('x', -1, x, y);
-        if (randomDirection == 3) newPos = checkPosition('y', 1, x, y);              
-        if (randomDirection == 4) newPos = checkPosition('y', -1, x, y);
+
+        while (generatingClosePosition) {
+            int randomDirection = Math.round(random(1, 4));
+            
+            if (randomDirection == 1) newPos = checkPosition('x', 1, x, y);
+            if (randomDirection == 2) newPos = checkPosition('x', -1, x, y);
+            if (randomDirection == 3) newPos = checkPosition('y', 1, x, y);              
+            if (randomDirection == 4) newPos = checkPosition('y', -1, x, y);
+            
+            if (grid[newPos[0]][newPos[1]] != 4) {
+                generatingClosePosition = false;
+                break;
+            } else continue;
+        }
         return newPos;
     }
 
@@ -117,6 +130,9 @@ public class Positions {
             if (y >= gridLength-1 && wantedDirection == 1) wantedDirection = -1;   // change movement direction if wantedDirection is out of bounds
             y = y + wantedDirection;
         }
+        //if (grid[x][y] == 4) {
+        //    return randomClosePosition(x, y);
+        //}
         int[] newPos = {x, y};
         return newPos;
     }
@@ -132,7 +148,7 @@ public class Positions {
 
 
     /* downward not working */
-    
+
 
     //Boolean positionOccupied(int x1, int y1, int x2, int y2) {
     //    if (x1 == x2 && y1 == y2) return true;
@@ -142,7 +158,7 @@ public class Positions {
 
     //int[] checkPositionNotOccupied(int currentX, int currentY, int newX, int newY) {
     //    int[] newPos = {newX, newY};
-        
+
     //    Boolean checkingIfPosOccupied = true;
     //    while (checkingIfPosOccupied) {
 
@@ -150,14 +166,14 @@ public class Positions {
     //        for (int i = 0; i < enemies.length; i++) {            // change this so we can use it for food and enemies
     //            int indexX = enemies[i].x;
     //            int indexY = enemies[i].y;
-                
+
     //            if (currentX == indexX && currentY == indexY) continue;                                    // were not interested in checking if out own position = our own position... continue
-                
+
     //            if (newX == indexX && newY == indexY) {
     //                posOccupied = true;
     //            }
     //        }
-            
+
     //        if (posOccupied == true) {
     //            int[] newPos2 = randomNewPosition(currentX, currentX);
     //            newX = newPos2[0];

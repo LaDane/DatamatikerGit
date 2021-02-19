@@ -2,6 +2,8 @@ class Player {
     /* Position stuff */
     int x; 
     int y; 
+    int wantedPosX;
+    int wantedPosY;
     
     /* Stats */
     int HP;
@@ -20,20 +22,40 @@ class Player {
 
     /* Movement */
     void moveLeft() {
-        if (canMove('x', -1)) x--;
+        if (insideGrid('x', -1)) {
+            wantedPosX = x - 1;
+            wantedPosY = y;
+            if (grid[wantedPosX][wantedPosY] != 4) 
+                x--;
+        }
     }
     void moveRight() {
-        if (canMove('x', 1)) x++;
+        if (insideGrid('x', 1)) {
+            wantedPosX = x + 1;
+            wantedPosY = y;
+            if (grid[wantedPosX][wantedPosY] != 4) 
+                x++;
+        }        
     }
     void moveUp() {
-        if (canMove('y', -1)) y--;
+        if (insideGrid('y', -1)) {
+            wantedPosX = x;
+            wantedPosY = y - 1;
+            if (grid[wantedPosX][wantedPosY] != 4) 
+                y--;
+        }        
     }
     void moveDown() {
-        if (canMove('y', 1)) y++;
+        if (insideGrid('y', 1)) {
+            wantedPosX = x;
+            wantedPosY = y + 1;
+            if (grid[wantedPosX][wantedPosY] != 4) 
+                y++;
+        }         
     }
 
 
-    Boolean canMove(char xy, int wantedDirection) {
+    Boolean insideGrid(char xy, int wantedDirection) {
         if (xy == 'x') {
             if (x == 0 && wantedDirection == -1) return false;
             if (x == gridLength-1 && wantedDirection == 1) return false;

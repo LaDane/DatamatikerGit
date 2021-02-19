@@ -5,6 +5,9 @@ PImage enemySpr;
 PImage foodSpr;
 PImage playerSpr;
 PImage wallSpr;
+PImage heartSpr;
+PImage bombSpr;
+PImage boxSpr;
 
 void assignSprites() {
     groundSpr = loadImage("data/ground.png");
@@ -12,6 +15,9 @@ void assignSprites() {
     foodSpr = loadImage("data/food.png");
     playerSpr = loadImage("data/player.png");
     wallSpr = loadImage("data/wall.png");
+    heartSpr = loadImage("data/heart.png");
+    bombSpr = loadImage("data/bomb.png");
+    boxSpr = loadImage("data/box.png");
 }
 
 

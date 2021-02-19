@@ -6,7 +6,7 @@ void keyPressed() {
     if (key == 'w') movingUp = true;       // move up
     if (key == 's') movingDown = true;     // move down
 
-    if (key == 'z' && debug) printIntArray(grid);
+    if (key == 'z' && debug) printIntArray(grid);    // show debug log in console
 }
 
 

@@ -39,30 +39,46 @@ class Food {
 
 
     void moveFood() {             // move food away from player
-        int[] newPos;
-        
-        if (useAstarPathfinding && !runAwayFromPlayer) newPos = positions.aStarPathfinding(null, this, difficulty);
-        else newPos = positions.oldPathfinding(false, difficulty, x, y);
-        
-        x = newPos[0];
-        y = newPos[1];      
+        int[] newPos = positions.randomClosePosition(x, y);
+
+        Boolean findingNewPos = true;
+        while (findingNewPos) {
+            if (useAstarPathfinding && !runAwayFromPlayer) newPos = positions.aStarPathfinding(null, this, difficulty);
+            else newPos = positions.oldPathfinding(false, difficulty, x, y);
+
+            if (grid[newPos[0]][newPos[1]] != 4) {
+                findingNewPos = false;
+
+                x = newPos[0];
+                y = newPos[1];                 
+                return;
+            } else continue;
+        }   
     }
-    
-    
+
+
     void generateTargetPos() {
-        int[] targetPos = positions.randomPosition(minDistanceToPlayer);
-        targetX = targetPos[0];
-        targetY = targetPos[1];
+        Boolean generatingTargetPos = true;
+
+        while (generatingTargetPos) {
+            int[] targetPos = positions.randomPosition(minDistanceToPlayer);
+            if (grid[targetPos[0]][targetPos[1]] != 4) {
+                targetX = targetPos[0];
+                targetY = targetPos[1];
+                generatingTargetPos = false;
+                break;
+            } else continue;
+        }
     }
-    
-    
+
+
     void checkDistanceToTargetPos() {
-        if ((positions.measureDistance('x', x, targetX) + positions.measureDistance('y', y, targetY)) / 2 <= 3) {
+        if ((positions.measureDistance('x', x, targetX) + positions.measureDistance('y', y, targetY)) / 2 <= 4) {
             generateTargetPos();
         }
     }
-    
-    
+
+
     void checkDistanceToPlayerPos() {
         if ((positions.measureDistance('x', x, player.x) + positions.measureDistance('y', y, player.y)) / 2 <= safeDistance) {
             generateTargetPos();

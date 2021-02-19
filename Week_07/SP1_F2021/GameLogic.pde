@@ -13,7 +13,8 @@ void playGame() {
 void clearBoard() {
     for (int x = 0; x < grid.length; x++) {
         for (int y = 0; y < grid[0].length; y++) {
-            grid[x][y] = 0;
+            if (grid[x][y] != 4)                         // only reset if grid is not walls
+                grid[x][y] = 0;
         }
     }
 }
@@ -27,16 +28,6 @@ void updateEntities() {
 void updateEnemies() {
     for (int i = 0; i < enemies.length; i++) {
         enemies[i].moveEnemy();
-
-        //try {
-        //    pathfind.findPath(enemies[i], null, enemies[i].x, enemies[i].y, player.x, player.y);
-        //    enemies[i].x = enemies[i].enemyPath.get(0).x;
-        //    enemies[i].y = enemies[i].enemyPath.get(0).y;
-            
-        //} catch(Exception e) {
-        //    println(e);
-        //}
-        
         grid[enemies[i].x][enemies[i].y] = enemies[i].type;
     }
 }
@@ -56,11 +47,6 @@ void updateFoods() {
 void drawBoard() {
     for (int x = 0; x < grid.length; x++) {
         for (int y = 0; y < grid[0].length; y++) {
-            //fill(getColorFromType(grid[x][y]));
-            //stroke(200);
-            //rectMode(CORNER);
-            //rect(x * gridSquareSize, y * gridSquareSize, gridSquareSize, gridSquareSize);
-
 
             if (grid[x][y] == 3) {
                 image(groundSpr, x * gridSquareSize, y * gridSquareSize, gridSquareSize, gridSquareSize);        // draw ground under player

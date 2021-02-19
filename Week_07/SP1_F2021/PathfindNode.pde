@@ -2,7 +2,6 @@
 
 class PathfindNode {
     Boolean walkable;
-    // int[][] worldPosition;
 
     int x;
     int y;

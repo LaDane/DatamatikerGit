@@ -10,31 +10,21 @@ class PathfindGrid {
 
     void createGrid() {                                                    // create a grid for A* pathfinding algo
         pathGrid = new PathfindNode[gridLength][gridLength];
-        
-        //for (int x = 0; x < pGrid.length; x++) {
-        //    for (int y = 0; y < pGrid[0].length; y++) {  
-            
+          
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[0].length; y++) {  
 
-                // println(x, y);
-                
                 Boolean walkable = true;
-                if (grid[x][y] != 0) walkable = false;                     // if grid type is not ground, then grid square is unwalkable
-                pathGrid[x][y] = new PathfindNode(walkable, x, y);            // add a PathfindNode to the current position in loop
-                
+                if (grid[x][y] == 4) walkable = false;                     // if grid type is wall, then grid square is unwalkable
+                pathGrid[x][y] = new PathfindNode(walkable, x, y);         // add a PathfindNode to the current position in loop
             }
         }
-        println("Grid generated correctly");
     }
 
 
     PathfindNode nodeFromWorldPoint(int x, int y) {                        // get pGrid node from a set of coords
         return pathGrid[x][y];
     }
-
-
-    // ArrayList<PathfindNode> path;
 
 
     ArrayList<PathfindNode> getNeighbours(PathfindNode node) {             // find neighbouring nodes in a 3x3 area around node
@@ -47,10 +37,10 @@ class PathfindGrid {
                 int checkX = node.x + x;                                   // local variables used to check if position is inside of 3x3 area
                 int checkY = node.y + y;
 
-                if (checkX >= 0 && checkX < gridLength &&                  // check if checkX is inside of grid
+                if (checkX >= 0 && checkX < gridLength &&                  // check if checkX is inside of grid &&
                     checkY >= 0 && checkY < gridLength)                    // check if checkY is inside of grid
                 {
-                    neighbours.add(pathGrid[checkX][checkY]);                 // position is valid, add position to neighbours array list
+                    neighbours.add(pathGrid[checkX][checkY]);              // position is valid, add position to neighbours array list
                 }
             }
         }

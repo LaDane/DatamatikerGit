@@ -8,7 +8,7 @@ class Pathfind {
         this.pGrid = _pGrid;
     }
 
-    // void findPath(int startX, int startY, int targetX, int targetY) {
+
     void findPath(Enemy enemy, Food food, int startX, int startY, int targetX, int targetY) {
         PathfindNode startNode = pGrid.nodeFromWorldPoint(startX, startY);        // get pGrid node as start node
         PathfindNode targetNode = pGrid.nodeFromWorldPoint(targetX, targetY);     // get pGrid node as target node
@@ -32,7 +32,6 @@ class Pathfind {
             closedSet.add(currentNode);                                           // add currentNode from closedSet since its been evaluated
 
             if (currentNode == targetNode) {                                      // path found successfull!
-                // println("pathfind success!");
                 if (enemy != null) enemy.enemyPath = retracePath(startNode, targetNode);
                 if (food != null) food.foodPath = retracePath(startNode, targetNode);
             }   
@@ -56,7 +55,7 @@ class Pathfind {
     }
     
     
-    // void retracePath(PathfindNode startNode, PathfindNode endNode) {              // retrace nodes to find pathfinding path (basically just reverses array)
+    // retrace nodes to find pathfinding path (basically just reverses array)
     ArrayList<PathfindNode> retracePath(PathfindNode startNode, PathfindNode endNode) {
         ArrayList<PathfindNode> path = new ArrayList<PathfindNode>();             // new array list for storing nodes in correct order 
         PathfindNode currentNode = endNode;                                       // temporarly store endNode
@@ -69,7 +68,6 @@ class Pathfind {
         Collections.reverse(path);                                                // reverse the array list to get the nodes in correct order from start to target
         
         return path;
-        //pGrid.path = path;
     }
     
     
