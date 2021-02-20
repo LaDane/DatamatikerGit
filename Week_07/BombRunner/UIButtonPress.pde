@@ -25,10 +25,10 @@ void mousePressed() {
             howToPlayUI();          
         }     
         /* MAIN MENU - settings button */
-        if (mouseX >= settingsButton[0] && mouseX <= settingsButton[0] + settingsButton[2] && mouseY >= settingsButton[1] && mouseY <= settingsButton[1] + settingsButton[3]) {
-            //startMenu = false;
-            println("Settings");            
-        }         
+        //if (mouseX >= settingsButton[0] && mouseX <= settingsButton[0] + settingsButton[2] && mouseY >= settingsButton[1] && mouseY <= settingsButton[1] + settingsButton[3]) {
+        //    //startMenu = false;
+        //    println("Settings");            
+        //}         
     }
     if (howToPlay) {
         /* HOW2PLAY - menu button */

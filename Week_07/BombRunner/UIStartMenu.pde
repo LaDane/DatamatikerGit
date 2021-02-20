@@ -47,7 +47,7 @@ void howToPlayUI() {
     textAlign(LEFT, TOP);
     textSize(50);
 
-    s = "move around using w a s d";
+    s = "move around using wasd or arrow keys";
     text(s, 150, 140);    
 
     s = "place bombs by pressing space";
