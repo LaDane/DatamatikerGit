@@ -1,12 +1,15 @@
 /* GAME GFX */
 
 PImage groundSpr;
+PImage wallSpr;
+
 PImage enemySpr;
 PImage foodSpr;
 PImage playerSpr;
-PImage wallSpr;
 PImage heartSpr;
+
 PImage boxSpr;
+PImage box2Spr;
 
 /* Bomb GFX */
 PImage bombSpr;
@@ -26,16 +29,27 @@ PImage exploRightMidSpr;
 PImage exploTopTopSpr;
 PImage exploTopMidSpr;
 
+/* Menu background */
+PImage menuBackground;
+
+/* Buttons */
+PImage btnHow2play;
+PImage btnMenu;
+PImage btnRestart;
+PImage btnSettings;
+PImage btnStart;
+
 void assignSprites() {
     groundSpr = loadImage("data/ground.png");
+    wallSpr = loadImage("data/wall.png");
+    
     enemySpr = loadImage("data/enemy.png");
     foodSpr = loadImage("data/food.png");
     playerSpr = loadImage("data/player.png");
+    heartSpr = loadImage("data/heart.png");    
     
-    wallSpr = loadImage("data/wall.png");
-    boxSpr = loadImage("data/box2.png");
-    
-    heartSpr = loadImage("data/heart.png");
+    boxSpr = loadImage("data/box1.png");
+    box2Spr = loadImage("data/box2.png");        // ui box
     
     bombSpr = loadImage("data/bomb.png");        // ui bomb
     bomb2Spr = loadImage("data/bomb2.png");      // black bomb
@@ -53,6 +67,15 @@ void assignSprites() {
     exploRightMidSpr = loadImage("data/explo/explo_right_mid.png");
     exploTopTopSpr = loadImage("data/explo/explo_top_top.png");
     exploTopMidSpr = loadImage("data/explo/explo_top_mid.png");
+    
+    
+    menuBackground = loadImage("data/background.png");
+    
+    btnHow2play = loadImage("data/buttons/btn_how2play.png");
+    btnMenu = loadImage("data/buttons/btn_menu.png");
+    btnRestart = loadImage("data/buttons/btn_restart.png");
+    btnSettings = loadImage("data/buttons/btn_settings.png");
+    btnStart = loadImage("data/buttons/btn_start.png");
 }
 
 

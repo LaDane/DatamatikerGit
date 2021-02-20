@@ -17,6 +17,10 @@ Boolean gamePaused = false;
 Boolean gameOver = false;
 Boolean useAstarPathfinding = true;
 
+/* UI screens */
+Boolean startMenu = true;
+Boolean howToPlay = false;
+
 /* Player movement */
 Boolean movingLeft = false;
 Boolean movingRight = false;
@@ -86,7 +90,10 @@ void setup() {
     /* Load sprites */
     assignSprites();
 
-    init();
+    
+    startMenuUI();
+
+    //init();
 }
 
 
@@ -126,7 +133,7 @@ void init() {
 
 
 void draw() {
-    if (!gamePaused) {
+    if (!gamePaused && !startMenu) {
         
         /* Handle player movement */
         if (movingLeft) player.moveLeft();
@@ -141,7 +148,7 @@ void draw() {
         updateUI(); 
     }
 
-    if (gameOver) {
+    if (gameOver && !startMenu) {
         gamePaused = true;
         gameOverUI();
     }

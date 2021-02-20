@@ -8,6 +8,9 @@ class Player {
     /* Stats */
     int HP;
     int score;
+    int foodEaten = 0;
+    int foodKilled = 0;
+    int enemyKilled = 0;
     
     /* Bombs */
     int bombs;

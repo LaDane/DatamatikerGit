@@ -19,3 +19,22 @@ void keyReleased() {
     if (key == 'w') movingUp = false;      // stop move up
     if (key == 's') movingDown = false;    // stop move down
 }
+
+
+
+
+
+
+
+/* DEBUGGING */
+void printIntArray(int[][] arr) {
+    println("");
+    println("");
+    println("");
+    for (int x = 0; x < arr.length; x++) {
+        for (int y = 0; y < arr[0].length; y++) {
+            print(arr[x][y] + ", ");
+        }
+        println();
+    }
+}

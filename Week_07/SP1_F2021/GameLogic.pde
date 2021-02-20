@@ -99,11 +99,11 @@ void resolveCollisions() {
             enemies[i].spawnEnemy();                                                      // spawn new enemy
         } 
         for (int j = 0; j < explosionsType.length; j++) {
-            if (grid[enemies[i].x][enemies[i].y] == explosionsType[j]) {
+            if (grid[enemies[i].x][enemies[i].y] == explosionsType[j]) {              // check if enemy collided with explosion
                 player.increaseScore();
+                player.enemyKilled++;
+                
                 enemies[i].spawnEnemy();
-                // add an increase to a counter that tracks enemies killed
-                println("ENEMY KILLED");
             }
         }
     }
@@ -112,14 +112,15 @@ void resolveCollisions() {
     for (int i = 0; i < foods.length; i++) {                                              
         if (player.x == foods[i].x && player.y == foods[i].y) {                       // check for food collisions
             player.increaseScore();                                                       // the player collided with food!
+            player.foodEaten++;
             foods[i].spawnFood();                                                         // spawn new food
         }
-        for (int j = 0; j < explosionsType.length; j++) {
+        for (int j = 0; j < explosionsType.length; j++) {                             // check if food collided with explosion
             if (grid[foods[i].x][foods[i].y] == explosionsType[j]) {
                 //player.increaseScore();
+                player.foodKilled++;
+
                 foods[i].spawnFood();
-                // add an increase to a counter that tracks foods killed
-                println("FOOD KILLED");
             }
         }        
     }
