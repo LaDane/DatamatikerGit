@@ -16,7 +16,7 @@ void startMenuUI() {
 
     image(btnStart, startButton[0], startButton[1], startButton[2], startButton[3]);                    // start button
     image(btnHow2play, how2playButton[0], how2playButton[1], how2playButton[2], how2playButton[3]);     // how 2 play button
-    image(btnSettings, settingsButton[0], settingsButton[1], settingsButton[2], settingsButton[3]);     // how 2 play button
+    // image(btnSettings, settingsButton[0], settingsButton[1], settingsButton[2], settingsButton[3]);     // how 2 play button
 
     fill(orange);
     rectMode(CORNERS);

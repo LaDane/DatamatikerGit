@@ -1,7 +1,19 @@
-/* Grid Game */
+/*
+BOMB RUNNER 
 
+SP1_F2021 grid game
+
+!OBS! You must install processings sound library in order for this sketch to work properly !OBS!
+
+Made by: Aleksander Willersrud
+*/
+
+
+import processing.sound.*;
 import java.util.HashSet;
 import java.util.Collections;
+
+
 
 Boolean debug = true;
 
@@ -63,7 +75,6 @@ float wallPerlinScale = 0.3;
 
 /* Fonts */
 PFont arcadeIn;
-PFont arcadeOut;
 
 /* Components */
 Player player;
@@ -77,6 +88,7 @@ PathfindNode pathfindNode;
 
 Walls walls;
 
+SoundFile soundtrack;
 
 void setup() {
     size(1200, 921);        // 1100, 921
@@ -84,16 +96,21 @@ void setup() {
 
     /* Load Fonts */
     arcadeIn = createFont("arcadeIn.ttf", 100, false);
-    arcadeOut = createFont("arcadeOut.ttf", 32);
     textFont(arcadeIn);
 
     /* Load sprites */
     assignSprites();
 
-    
+    /* Display start menu */
     startMenuUI();
+    
+    /* Play soundtrack */
+    println("Ignore the error below, it is caused by slow loading speed of soundtrack");
+    soundtrack = new SoundFile(this, "data/soundtrack.wav");        // .wav files load quicker than .mp3 files
+    soundtrack.play();
+    soundtrack.loop();
+    soundtrack.amp(0.8);
 
-    //init();
 }
 
 
