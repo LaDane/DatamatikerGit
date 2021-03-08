@@ -1,7 +1,8 @@
 import java.util.InputMismatchException;
 
 public class BankAccount{
-    private float saldo;
+
+    private float balance;
     private String owner;
     private int id;
     private static int counter;
@@ -10,38 +11,30 @@ public class BankAccount{
     //  ArrayList<Float> transaction = new ArrayList<>();
 
     public BankAccount(float saldo){
-        this.saldo = saldo;
+        this.balance = saldo;
         this.id = counter++;            // unique id
-    }
-
-    public void setOwner(String owner){
-        this.owner = owner;
     }
 
     public String getOwner(){
         return owner;
     }
-
-    public float getSaldo() {
-        return saldo;
+    public void setOwner(String owner){
+        this.owner = owner;
     }
+
+    public float getBalance() {
+        return balance;
+    }
+    public void setBalance(float _balance) { this.balance = _balance; }
 
     @Override
     public String toString(){
         String str;
-        str= owner+" : "+saldo;
+        str= owner+" : "+balance;
         return str;
     }
 
-    public void withDrawAmount() {
-        int input=0;
-
-        try {
-            input = Integer.parseInt( Main.getUserInput("Træk beløb:"));
-        }catch (InputMismatchException e){
-            System.out.println(e.toString());
-            input = Integer.parseInt( Main.getUserInput("Træk beløb:"));
-        }
-        this.saldo = saldo-input;
+    public void withdraw() {
+        Main.withdrawFromAccount(this);
     }
 }

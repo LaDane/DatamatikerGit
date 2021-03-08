@@ -1,33 +1,36 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    private static BankAccount[] accounts = new BankAccount[3];
+
+    public static ArrayList<BankAccount> accounts = new ArrayList<BankAccount>();
 
     public static void main(String[] args) {
-        /* accounts[0] = new BankAccount(30000);
-        accounts[1] = new BankAccount(30000);
-        accounts[2] = new BankAccount(30000);
-        assignPlayer(accounts[0]);
-        assignPlayer(accounts[1]);
-        assignPlayer(accounts[2]); */
 
         try {
             readAccountData();
         } catch (IOException e) {
             System.out.println("This file does not exist");
+
+            UI ui = new UI();
+            ui.createAccounts();
         }
 
         printAccounts();
 
-        accounts[0].withDrawAmount();
-        accounts[2].withDrawAmount();
+        // accounts[0].withDrawAmount();
+        // accounts[2].withDrawAmount();
 
         // printAccounts();
         saveGameData();
+    }
 
+
+    public static void withdrawFromAccount(BankAccount account) {
+        UI.withdrawAmount(account);
     }
 
 
@@ -36,26 +39,23 @@ public class Main {
         Scanner scan = new Scanner(file);
         String[] accountLine;
 
-        int i = 0;
+        int count = 0;
+
         while(scan.hasNextLine()) {
             String line = scan.nextLine();
             accountLine = line.split(":");
 
-            accounts[i] = new BankAccount(Float.parseFloat(accountLine[1]));
-            accounts[i].setOwner((accountLine[0]));
-            i++;
+            accounts.add(new BankAccount(Float.parseFloat(accountLine[1])));
+            int index = accounts.size();
+            accounts.get(index-1).setOwner(accountLine[0]);
+
+            count++;
         }
     }
 
 
     public static void printAccounts() {
-//      for (int i = 0; i < accounts.length; i++) {
-//          System.out.println("\n"+accounts[i]);
-//      }
-
-//      for each loop below
-
-        for (BankAccount a: accounts ) {
+        for (BankAccount a: accounts ) {        // for each loop
             System.out.println("\n" + a);
         }
     }
@@ -65,11 +65,10 @@ public class Main {
         String gameData = "";
 
         for (BankAccount a : accounts) {
-            gameData += a.getOwner() +" : "+ a.getSaldo() +"\n";
+            gameData += a.getOwner() +" : "+ a.getBalance() +"\n";
         }
 
-        // save some data to a txt fil
-        try {
+        try {                                   // save some data to a txt fil
             FileWriter writer = new FileWriter("data.txt");
             writer.write(gameData);
             writer.close();
@@ -77,21 +76,6 @@ public class Main {
         catch(IOException e) {
             System.out.println(e.getCause());
         }
-    }
-
-
-    public static void assignPlayer(BankAccount account){
-        String input = getUserInput("Skriv kontoejers navn: ");
-        account.setOwner(input);
-        System.out.println(account.getOwner());
-    }
-
-
-    public static String getUserInput(String msg){
-        System.out.println(msg);
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();
-        return input;
     }
 }
 
