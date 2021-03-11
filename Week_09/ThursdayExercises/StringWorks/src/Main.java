@@ -129,7 +129,7 @@ public class Main {
                     return true;
                 }
                 else {
-                    lastConsonant = c;
+                    lastConsonant = Character.toLowerCase(c);
                 }
             }
         }
