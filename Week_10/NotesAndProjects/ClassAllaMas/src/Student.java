@@ -1,11 +1,7 @@
-public class Student {
-    String name;
-    int age;
-    Address adress;
+public class Student extends Person {
 
-    public Student(String name, int age, Address adress) {
-        this.name = name;
-        this.age = age;
-        this.adress = adress;
+
+    public Student(String name, int age, Address address) {
+        super(name, age, address);
     }
 }

@@ -10,7 +10,9 @@ public class Main {
         Address gokAddress = new Address("Gok vej", 9, "3th", 89, "DK");
 
         // Teacher
-        Teacher teacher1 = new Teacher("Ole", 99, oleAddress);
+        Person teacher1 = new Teacher("Ole", 99, oleAddress);
+        Teacher castTeacher1 = (Teacher) teacher1;
+        System.out.println(castTeacher1.age);
 
         // Students
         ArrayList<Student> sem1Students = new ArrayList<Student>();
@@ -18,9 +20,11 @@ public class Main {
         sem1Students.add(new Student("Gok", 7, gokAddress));
 
         // School
-        Semester firstSemester = new Semester("Semester1", teacher1, sem1Students);
+        Semester firstSemester = new Semester("Semester1", castTeacher1, sem1Students);
         School thisSchool = new School("DataSchool", firstSemester);
 
         System.out.println(sem1Students.size());
+
+        teacher1.eat();
     }
 }
