@@ -1,0 +1,40 @@
+1, Start, Start, 0, 4000
+2, Land, Rødovrevej, 1200, 100
+3, Event, Prøv Lykken, 0, 0
+4, Land, Hvidovrevej, 1200, 100
+5, Tax, Skat, 4000, 0, 0
+6, ShippingLine, Limfjorden A/S, 4000, 1000
+7, Land, Roskildevej, 2000, 200
+8, Event, Prøv Lykken, 0, 0
+9, Land, Valby Langegade, 2000, 200
+10, Land, Allégade, 2400, 250
+11, Field, Fængsel, 0, 0
+12, Land, Frederiksberg Alle, 2800, 250
+13, Brewery, Coca cola, 3000, 250
+14, Land, Bülowsvej, 2800, 250
+15, Land, Gl.Kongevej, 3200, 250
+16, ShippingLine, dont know, 4000, 250
+17, Land, Bernstorffsvej, 3600, 250
+18, Event, Prøv Lykke, 0, 0
+19, Land, Hellerupvej, 3600, 100
+20, Land, Strandvej, 4000, 100
+21, Field, Parkering, 0, 0
+22, Land, Trianglen, 4400, 100
+23, Event, Prøv Lykke, 0, 0
+24, Land, Østerbrogade, 4400, 100
+25, Land, Grønningen, 4800, 100
+26, ShippingLine, Mols-Linien A/S, 4000, 1000
+27, Land, Bredgade, 5200, 100
+28, Land, Kgs.Nytorv, 5200, 100
+29, Brewery, Faxe, 3000, 100
+30, Land, Østergade, 5600, 100
+31, Field, Fængsel, 0, 0
+32, Land, Amagertorv, 6000, 100
+33, Land, Vimmelskaftet, 6000, 100
+34, Event, Prøv Lykke, 0, 0
+35, Land, Nygade, 6400, 100
+36, ShippingLine, Skandinavisk Linietrafik, 4000, 1000
+37, Event, Prøv lykke, 0, 0
+38, Land, Frederiksberggade, 7000, 100
+39, Tax, Skat, 2000, 0, 0
+40, Land, Råhuspladsen, 8000, 100
