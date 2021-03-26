@@ -53,13 +53,13 @@ public class Player {
     @Override
     public String toString() {
         return String.format("Player %d:\n" +
-                             "\tName:\t\t%s\n" +
-                             "\tBalance:\t%d\n",
-                             id, name, bankAccount.getBalance());
+                        "\tName:\t\t%s\n" +
+                        "\tBalance:\t%d\n",
+                id, name, bankAccount.getBalance());
     }
 
     /* Update player position by adding a dice roll to players current position */
-    public void updatePosition(int diceRoll) {
+    public int updatePosition(int diceRoll) {
         this.position += diceRoll;
 
         //When player position exceeds 40 we pass start.
@@ -72,6 +72,20 @@ public class Player {
             if (this.position == 1) {
                 getMoneyFromBank(landOnStartMoney);
             }
+        }
+        return this.position;
+    }
+
+    public void doTransaction(Player recipient, int amount) {
+        // Negative amount: You lose money
+        if (recipient == null) {
+            if (amount < 0) {
+                giveMoneyToBank(amount);
+            } else {
+                getMoneyFromBank(amount);
+            }
+        } else {
+            doPlayerTransaction(recipient, amount);
         }
     }
 
