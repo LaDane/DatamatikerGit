@@ -39,7 +39,7 @@ public class MySketch extends PApplet {
 
     public void createBoard() {
         createFieldSquare();
-        displayFieldSquare.setFill(100);
+        displayFieldSquare.setFill(color(173, 216, 230));
         displayFieldSquare.setStrokeWeight(3);
 
         createFieldDivider();
