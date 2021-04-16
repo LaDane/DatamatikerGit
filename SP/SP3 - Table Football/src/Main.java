@@ -1,13 +1,10 @@
 import java.util.ArrayList;
 
 public class Main {
-//    public static Data data;
-//    public static UI ui;
     public static UIData uiData;
     public static Founder currentFounder;
     public static Tournament currentTournament;
     public static Match match;
-    //public static Match currentMatch;
 
     public static ArrayList<Team> currentTeams = new ArrayList();
     public static ArrayList<Team> activeTeams = new ArrayList();

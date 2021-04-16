@@ -156,11 +156,11 @@ public class UIData {
         String teamNameInput = UI.getUserInput(teamNameMsg);
 
         // Team player 1 name
-        String player1NameMsg = "Input name of player 1 on team"+ teamNameInput +"\n";
+        String player1NameMsg = "Input name of player 1 on team "+ teamNameInput +"\n";
         String player1NameInput = UI.getUserInput(player1NameMsg);
 
         // Team player 2 name
-        String player2NameMsg = "Input name of player 2 on team"+ teamNameInput +"\n";
+        String player2NameMsg = "Input name of player 2 on team "+ teamNameInput +"\n";
         String player2NameInput = UI.getUserInput(player2NameMsg);
 
         Team team = new Team(teamNameInput, player1NameInput, player2NameInput, 0, 0, 0, 0, false);

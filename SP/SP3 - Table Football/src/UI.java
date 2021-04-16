@@ -197,9 +197,12 @@ public class UI {
             }
 
             matchDone(winnerTeam,loserTeam,winnerTeamGoalsInt,loserTeamGoalsInt);
+
             Main.matches.remove(currentMatch);
+            Data.saveData(null, null, null, Main.matches, null);
+
             Main.oldMatches.add(currentMatch);
-            Data.saveData(null, null, null, Main.matches, Main.oldMatches);
+            Data.saveData(null, null, null, null, Main.oldMatches);
         }
         UIData.deleteDataFile("Matches", new File("matchesData.txt"));
         UIData.deleteDataFile("Teams", new File("teamsData.txt"));
