@@ -1,7 +1,11 @@
 CREATE DATABASE IF NOT EXISTS Matador DEFAULT CHARSET = utf8mb4;
 use Matador;
+SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS Field;
+DROP TABLE IF EXISTS Ownership;
 DROP TABLE IF EXISTS Player;
+SET FOREIGN_KEY_CHECKS=1;
+
 CREATE table Field(
      id tinyint primary key auto_increment, 
 	 type varchar(255),
@@ -18,6 +22,17 @@ CREATE table Player(
 	positon int DEFAULT 1,
     turnsleft int DEFAULT 0,
     next boolean DEFAULT 0
+)ENGINE=InnoDB AUTO_INCREMENT=1;
+
+create table ownership(
+player_id tinyint,
+field_id tinyint,
+houseCount tinyint,
+hotelCount tinyint,
+mortgaged boolean DEFAULT 0,
+ FOREIGN KEY (player_id) REFERENCES Player(id),
+ FOREIGN KEY (field_id) REFERENCES Field(id),
+ CONSTRAINT ownershipID PRIMARY KEY (field_id,player_id)
 )ENGINE=InnoDB AUTO_INCREMENT=1;
 
 
