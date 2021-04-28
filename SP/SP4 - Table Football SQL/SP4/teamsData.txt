@@ -1,8 +1,0 @@
-Team7:t7p1:t7p2:0:0:0:0:false
-Team6:t6p1:t6p2:0:0:0:0:false
-Team5:t5p1:t5p2:0:0:0:0:false
-Team4:t4p1:t4p2:0:0:0:0:false
-Team3:t3p1:t3p2:0:0:0:0:false
-Team2:t2p1:t2p2:0:0:0:0:false
-Team1:t1p1:t1p2:0:0:0:0:false
-Team8:t8p1:t8p2:0:0:0:0:false
