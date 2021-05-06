@@ -2,23 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15e453d0-bccb-450c-90fc-7f2e8ec85bd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/DataStructures-LiveCode-BinaryTree.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/Data Structures1_v2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/DataStructures-LiveCode-BinaryTree.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/out/production/DataStructures-LiveCode-BinaryTree/BinaryTree/BinaryTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/out/production/DataStructures-LiveCode-BinaryTree/BinaryTree/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/out/production/DataStructures-LiveCode-BinaryTree/com/company/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/src/BinaryTree/BinaryTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/src/BinaryTree/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/DataStructures-LiveCode-BinaryTree/src/com/company/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures/NotesAndProjects/Data_Structures2_v2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/Data Structures1_v2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/DataStructures-LiveCode-BinaryTree.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/out/production/DataStructures-LiveCode-BinaryTree/BinaryTree/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/out/production/DataStructures-LiveCode-BinaryTree/BinaryTree/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/out/production/DataStructures-LiveCode-BinaryTree/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/src/BinaryTree/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/src/BinaryTree/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/DataStructures-LiveCode-BinaryTree/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/Data_Structures2_v2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/Sortering_v2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/SortingAlgos.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/out/production/SortingAlgos/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Week_18 - Data Structures - Sorting/NotesAndProjects/SortingAlgos/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,5 +95,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
