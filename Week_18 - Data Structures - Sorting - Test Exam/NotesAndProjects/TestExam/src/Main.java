@@ -17,6 +17,8 @@ import Exam11_Search.*;
 public class Main {
     public static void main(String[] args) {
 
+        // Proper Case took the longest to finish
+
         // 1 - ArrayList
 //        ArrayList<String> arrStr = new ArrayList<String>();
 //        arrStr.add("Bob");
