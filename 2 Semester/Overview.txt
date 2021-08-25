@@ -1,0 +1,4 @@
+Week 34
+	2021-08-24  Polymorph 		 Memory addresses, method names, variable names, super class names
+	2021-08-25  Polymorph Revieew	 Memory addresses review
+	2021-08-25  JavaSet	         Hashset, Treeset, LinkedHashSet

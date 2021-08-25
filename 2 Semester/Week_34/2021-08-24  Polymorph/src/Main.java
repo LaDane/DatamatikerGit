@@ -1,8 +1,6 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 // Polymorph
@@ -84,23 +82,37 @@ public class Main {
 
 //        System.out.println("You wrote : "+ getInput("\nWrite something\n"));
 
-        String answer = getInput("What object do you want?");
-        Object object;
-        switch (answer){
-            case "cat":
-                object = new Cat();
-                break;
-            case "cow":
-                object = new Cow();
-                break;
-            case "string":
-                object = "";
-                break;
-            default:
-                object = new Object();
-        }
-        ObjectInfo.showSuperClass(object);
+//        String answer = getInput("What object do you want?");
+//        Object object;
+//        switch (answer){
+//            case "cat":
+//                object = new Cat();
+//                break;
+//            case "cow":
+//                object = new Cow();
+//                break;
+//            case "string":
+//                object = "";
+//                break;
+//            default:
+//                object = new Object();
+//        }
+//        ObjectInfo.showSuperClass(object);
 
+        ObjectInfo objectInfo = new ObjectInfo();
+        System.out.println("\nAll methods");
+        Set<String> sortedMethods = ObjectInfo.showMethods(objectInfo, false);
+        TreeSet<String> sortedMethodsTree = new TreeSet<>(sortedMethods);
+        for (String sortedMethod : sortedMethodsTree) {
+            System.out.println("\t"+ sortedMethod);
+        }
+
+        System.out.println("\nInherited Methods");
+        Set<String> sortedInheritedMethods = ObjectInfo.showInheritedMethods(objectInfo);
+        TreeSet<String> sortedInheritedMethodsTree = new TreeSet<>(sortedInheritedMethods);
+        for (String sortedMethod : sortedInheritedMethodsTree) {
+            System.out.println("\t"+ sortedMethod);
+        }
     }
 
     public static String getInput(String s) {
