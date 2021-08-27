@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         int[] ints = new int[4];
 
         String s = "hej";
@@ -113,12 +114,57 @@ public class Main {
         for (String sortedMethod : sortedInheritedMethodsTree) {
             System.out.println("\t"+ sortedMethod);
         }
+        */
+
+        // Another example of polymorph
+//        Set<String> stringSet = new HashSet<>();
+//        stringSet = new LinkedHashSet<>();
+//        stringSet = new TreeSet<>();
+
+//        Map<String, Object> stringObjectMap = new HashMap<>();
+//        stringObjectMap.put("cow", new Cow());
+//        stringObjectMap.put("cat", new Cat());
+//        stringObjectMap.put("dog", new Dog());
+//        stringObjectMap.put("fish", new Fish());
+//        stringObjectMap.put("object", new ObjectInfo());
+//
+//        stringObjectMap.getOrDefault(getInput("Write a type"), new Object());
+
+        mapIntro();
+
     }
 
     public static String getInput(String s) {
         System.out.println(s);
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
+    }
+
+    public static void mapIntro() {
+        // Maps
+        Map<String, Object> objectMap = new HashMap<>();
+        objectMap.put("cow", new Cow());
+        objectMap.put("cat", new Cat());
+        objectMap.put("dog", new Dog());
+        objectMap.put("person", new Person("Alek", 25));
+        objectMap.put("objectInfo", new ObjectInfo());
+        objectMap.put("map", new HashMap<>());
+        objectMap.put("tree", new TreeSet<>());
+        objectMap.put("div", new ArithmeticException());
+
+//        System.out.println(objectMap.getOrDefault(getInput("Input object type\n"), new Object()).getClass().getSimpleName());
+//        System.out.println(ObjectInfo.showInheritedMethods(objectMap.getOrDefault(getInput("Input object type\n"), new Object())));
+//        System.out.println("\nAll classes in map");
+//        for (String s : objectMap.keySet()) {
+//            System.out.println(s);
+//        }
+//        System.out.println("\nAll objects in map");
+//        for (Object value : objectMap.values()) {
+//            System.out.println(value.getClass().getSimpleName());
+//        }
+
+//        ObjectInfo.showClassHierarchy(objectMap);
+        ObjectInfo.showReverseClassHierarchy(objectMap);
     }
 
 }
