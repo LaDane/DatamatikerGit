@@ -1,5 +1,8 @@
 Week 34
-	2021-08-24  Polymorph 		    Memory addresses, method names, variable names, super class names, Hashset, Treeset, LinkedHashSet, Hashmap
+	2021-08-24  Polymorph 		Memory addresses, method names, variable names, super class names, Hashset, Treeset, LinkedHashSet, Hashmap
 	2021-08-25  Polymorph Revieew	Memory addresses review
-	2021-08-25  JavaSet	            Hashset, Treeset, LinkedHashSet
-    2021-08-27  Scratch             Testing out scratch
+	2021-08-25  JavaSet	        Hashset, Treeset, LinkedHashSet
+    	2021-08-27  Scratch             Testing out scratch
+Week 36
+	2021-09-06  JUnit Test		Refresh of unit tests
+	2021-09-06  Lists
