@@ -6,3 +6,4 @@ Week 34
 Week 36
 	2021-09-06  JUnit Test		Refresh of unit tests, modulus
 	2021-09-06  Lists		Nodes and lists
+	2021-09-07  ListExercises	Exercises of lists
