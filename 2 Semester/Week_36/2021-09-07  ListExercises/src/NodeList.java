@@ -75,4 +75,71 @@ public class NodeList {
         }
         return result;
     }
+
+    public Node findNode(String nodeName) {
+        Node currentNode = headNode;
+        while (currentNode != null) {
+            if (currentNode.name.equals(nodeName))
+                return currentNode;
+            currentNode = currentNode.nextNode;
+        }
+        return null;
+    }
+
+    public Node removeWithString(String nodeName) {
+        if (tailNode == null)
+            return null;
+        else if (headNode == tailNode)
+            return tailNode;
+
+        Node nodeToRemove = findNode(nodeName);
+        if (nodeToRemove == headNode)
+            return removeFromHead();
+        if (nodeToRemove == tailNode)
+            return removeFromTail();
+
+        if (nodeToRemove != null) {
+            nodeToRemove.nextNode.previousNode = nodeToRemove.previousNode;
+            nodeToRemove.previousNode.nextNode = nodeToRemove.nextNode;
+        }
+        return nodeToRemove;
+    }
+
+    public Node removeWithNode(Node node) {
+        return removeWithString(node.name);
+    }
+
+    public Node insertNodeNext(String indexNodeName, Node nodeToInsert) {
+        Node indexNode = findNode(indexNodeName);
+
+        if (indexNode == tailNode) {
+            return insertFromTail(nodeToInsert);
+        }
+
+        if (indexNode != null) {
+            nodeToInsert.previousNode = indexNode;
+            nodeToInsert.nextNode = indexNode.nextNode;
+
+            indexNode.nextNode.previousNode = nodeToInsert;
+            indexNode.nextNode = nodeToInsert;
+        }
+        return indexNode;
+    }
+
+    public Node insertNodePrevious(String indexNodeName, Node nodeToInsert) {
+        Node indexNode = findNode(indexNodeName);
+
+        if (indexNode == headNode) {
+            return insertFromHead(nodeToInsert);
+        }
+
+        if (indexNode != null) {
+            nodeToInsert.nextNode = indexNode;
+            nodeToInsert.previousNode = indexNode.previousNode;
+
+            indexNode.previousNode.nextNode = nodeToInsert;
+            indexNode.previousNode = nodeToInsert;
+        }
+        return indexNode;
+    }
 }
