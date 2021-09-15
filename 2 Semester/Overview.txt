@@ -9,3 +9,6 @@ Week 36
 	2021-09-07  ListExercises			Exercises of lists
 Week 37
 	2021-09-13  Thread Introduction - Lars		Completion of Lars' videos and exercises
+	2021-09-13  Ball Bounce Thread Exercise		Using multiple threads to prevent locking of UI
+	2021-09-15  CounterThread			Exploring use of synchronized methods
+	2021-09-15  ConcurrencyExercises		Exercises using synchronized variables

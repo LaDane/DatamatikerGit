@@ -1,5 +1,9 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyCounter counter = new MyCounter("Counter");
         CounterThread t1 = new CounterThread(counter);
         CounterThread t2 = new CounterThread(counter);
@@ -13,10 +17,11 @@ public class Main {
         } catch (InterruptedException e) {e.printStackTrace();}
 
         System.out.println(counter.getSum());
+        firstTry();
     }
 
 
-    private void firstTry() {
+    private static void firstTry() throws InterruptedException {
         Runnable r1 = new Runnable() {
             @Override
             public void run() {
@@ -56,6 +61,13 @@ public class Main {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
+
+        ExecutorService es = Executors.newFixedThreadPool(4);
+        es.execute(r1);
+        es.execute(r2);
+        es.awaitTermination(4000, TimeUnit.MILLISECONDS);
+        es.shutdown();
+
 
         System.out.println("Done");
     }
