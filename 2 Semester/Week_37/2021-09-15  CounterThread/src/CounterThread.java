@@ -8,8 +8,12 @@ public class CounterThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10000; i++) {
-            counter.countUp();
+        for (int i = 1; i < getSizeOfMap(); i++) {
+            System.out.println(counter.getQuestion(i));
         }
+    }
+
+    private int getSizeOfMap() {
+        return counter.questions.size();
     }
 }
