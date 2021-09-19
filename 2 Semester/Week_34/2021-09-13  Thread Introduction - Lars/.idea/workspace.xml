@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7a960a9-5a85-4859-8c80-1852128a0c5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/2021-09-17  Producer-Consumer Fibonacci.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/src/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/src/Fibonacci.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2021-09-17  Producer-Consumer Fibonacci/src/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="26b07cae-6345-490d-9db3-bee64eef9a5a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1yDIJbm2eSowOrSDqEtt26fVJWE" />
+  <component name="ProjectId" id="1y4qmuPSBFHxFMOyyNZynUoEepd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -37,32 +26,33 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="2021-09-16  Producer-Consumer" />
+    <configuration name="ThreadDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadDemo" />
+      <module name="2021-09-13  Thread Introduction - Lars" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ThreadDemo" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e7a960a9-5a85-4859-8c80-1852128a0c5e" name="Default Changelist" comment="" />
-      <created>1631779662101</created>
+      <changelist id="26b07cae-6345-490d-9db3-bee64eef9a5a" name="Default Changelist" comment="" />
+      <created>1631521372322</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631779662101</updated>
+      <updated>1631521372322</updated>
     </task>
     <servers />
   </component>
@@ -76,6 +66,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
