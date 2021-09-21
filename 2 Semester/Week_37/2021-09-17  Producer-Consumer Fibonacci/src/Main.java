@@ -1,3 +1,6 @@
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -9,7 +12,8 @@ public class Main {
     public static BlockingQueue<Integer> S1 = new ArrayBlockingQueue<>(9);
     public static BlockingQueue<Integer> S2 = new ArrayBlockingQueue<>(9);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
         fillS1();
 
         Thread P1 = createProCon(true);
