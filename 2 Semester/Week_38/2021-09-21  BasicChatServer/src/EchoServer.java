@@ -20,7 +20,6 @@ public class EchoServer {
     }
 
     public void startServer() throws IOException {
-        System.out.println("Starting server...");
         fillTranslations();
 
         ExecutorService dispatcherES = Executors.newFixedThreadPool(1);
@@ -29,6 +28,7 @@ public class EchoServer {
 
         ServerSocket serverSocket = new ServerSocket(port);
         ExecutorService clientES = Executors.newFixedThreadPool(10);
+        System.out.println("Server running");
         while(true) {
             Socket client = serverSocket.accept();
             ClientHandler cl = new ClientHandler(client, translations, this);

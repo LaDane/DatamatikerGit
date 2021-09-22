@@ -31,12 +31,23 @@ public class ClientHandler implements Runnable{
     }
 
     public void protocol() {
-        pw.println("CLOSE to quit\nEnter name");
-        this.clientName = sc.nextLine();
-        pw.println("Name set to : "+ clientName);
 
+        boolean nameSet = false;
         String message = "";
+        pw.println("CLOSE to quit\nEnter name");
+
         while (!message.equals("CLOSE")) {
+
+            if (!nameSet && sc.hasNextLine()) {
+                this.clientName = sc.nextLine();
+                pw.println("Name set to : '"+ clientName +"'");
+                nameSet = true;
+                continue;
+            }
+
+            if (!sc.hasNextLine())
+                continue;
+
             message = sc.nextLine();
             if (currentQuestion != null && message.toLowerCase().equals(currentQuestion.answer)) {
                 pw.println(answerQuestionCorrectly());
@@ -72,18 +83,33 @@ public class ClientHandler implements Runnable{
                 pw.println("Unknown command");
             }
         }
+        System.out.println("Client closed");
         clientClose();
     }
 
     private void actionSwitch(String action, String data) {
         switch (action) {
+            case "HELP": pw.println(actionHelp()); break;
             case "ALL": actionMsg(action, data); break;
             case "UPPER": pw.println(actionUpper(data)); break;
             case "LOWER": pw.println(actionLower(data)); break;
             case "REVERSE": pw.println(actionReverse(data)); break;
             case "TRANSLATE": pw.println(actionTranslate(data)); break;
-            case "QUIZ": pw.println(actionQuizSwitch(data));
+            case "QUIZ": pw.println(actionQuizSwitch(data)); break;
         }
+    }
+
+    private String actionHelp() {
+        String helpStr = "";
+        helpStr += "\nHELP";
+        helpStr += "\nALL";
+        helpStr += "\nUPPER";
+        helpStr += "\nLOWER";
+        helpStr += "\nREVERSE";
+        helpStr += "\nTRANSLATE";
+        helpStr += "\nQUIZ";
+
+        return helpStr;
     }
 
     private void actionMsg(String action, String data) {
