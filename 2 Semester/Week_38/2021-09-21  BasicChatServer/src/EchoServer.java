@@ -12,7 +12,7 @@ public class EchoServer {
     private int port;
     private HashMap<String, String> translations = new HashMap<>();
     public BlockingQueue<ClientHandler> connectedClients = new ArrayBlockingQueue<>(10);
-    public BlockingQueue<String> messages = new ArrayBlockingQueue<>(10);
+    public BlockingQueue<Msg> messages = new ArrayBlockingQueue<>(10);
 
     public EchoServer(int port) {
         this.port = port;
@@ -31,7 +31,6 @@ public class EchoServer {
         while(true) {
             Socket client = serverSocket.accept();
             ClientHandler cl = new ClientHandler(client, translations, this);
-            // TODO: add to queue
             addConnectedClient(cl);
 
             clientES.execute(cl);
@@ -55,13 +54,13 @@ public class EchoServer {
         connectedClients.remove(cl);
     }
 
-    public void addMessage(String message) {
-        try {messages.put(message);}
+    public void addMessage(String action, String message) {
+        try {messages.put(new Msg(action, message));}
         catch (InterruptedException e) {e.printStackTrace();}
     }
 
-    public String getMessage() {
-        String message = "";
+    public Msg getMessage() {
+        Msg message = null;
         try {message = messages.take();}
         catch (InterruptedException e) {e.printStackTrace();}
         return message;

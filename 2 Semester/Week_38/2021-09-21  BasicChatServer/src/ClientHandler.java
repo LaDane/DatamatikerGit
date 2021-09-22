@@ -3,10 +3,10 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.concurrent.BlockingQueue;
 
 public class ClientHandler implements Runnable{
 
+    String clientName;
     Socket client;
     PrintWriter pw;
     Scanner sc;
@@ -15,14 +15,11 @@ public class ClientHandler implements Runnable{
 
     public ClientHandler(Socket client, HashMap<String, String> translations, EchoServer echoServer) throws IOException {
         this.client = client;
-        // TODO: create cl with shared resource
         this.pw = new PrintWriter(client.getOutputStream(), true);
         this.sc = new Scanner(client.getInputStream());
         this.translations = translations;
         this.echoServer = echoServer;
     }
-
-    // TODO: create new constructor with shared messages queue
 
     @Override
     public void run() {
@@ -30,7 +27,11 @@ public class ClientHandler implements Runnable{
     }
 
     public void protocol() {
-        pw.println("CLOSE to quit");
+        pw.println("CLOSE to quit\nEnter name");
+        this.clientName = sc.nextLine();
+
+        // TODO: add functionality to send messages to 1 specific other client by clientName
+
         String message = "";
         while (!message.equals("CLOSE")) {
             message = sc.nextLine();
@@ -40,6 +41,17 @@ public class ClientHandler implements Runnable{
                 String action = messageSplit[0];
                 String data = messageSplit[1];
 
+                boolean sendMsgToUser = false;
+                for (ClientHandler cl : echoServer.connectedClients) {
+                    if (action.toLowerCase().equals(cl.clientName.toLowerCase())) {
+                        sendMsgToUser = true;
+                        break;
+                    }
+                }
+                if (sendMsgToUser) {
+                    actionMsg(action, data);
+                    continue;
+                }
                 actionSwitch(action, data);
             }
             else if (message.contains("CLOSE")){
@@ -54,7 +66,7 @@ public class ClientHandler implements Runnable{
 
     private void actionSwitch(String action, String data) {
         switch (action) {
-            case "ALL": actionAll(data); break;
+            case "ALL": actionMsg(action, data); break;
             case "UPPER": pw.println(actionUpper(data)); break;
             case "LOWER": pw.println(actionLower(data)); break;
             case "REVERSE": pw.println(actionReverse(data)); break;
@@ -62,15 +74,8 @@ public class ClientHandler implements Runnable{
         }
     }
 
-    private void clientClose() {
-        echoServer.removeConnectedClient(this);
-
-        try {client.close();}
-        catch (IOException e) {e.printStackTrace();}
-    }
-
-    private void actionAll(String data) {
-        echoServer.addMessage(data);
+    private void actionMsg(String action, String data) {
+        echoServer.addMessage(action.toLowerCase(), data);
     }
 
     private String actionUpper(String data) {
@@ -92,5 +97,12 @@ public class ClientHandler implements Runnable{
 
     public PrintWriter getPw() {
         return this.pw;
+    }
+
+    private void clientClose() {
+        echoServer.removeConnectedClient(this);
+
+        try {client.close();}
+        catch (IOException e) {e.printStackTrace();}
     }
 }
