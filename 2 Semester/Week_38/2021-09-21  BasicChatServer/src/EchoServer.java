@@ -13,6 +13,7 @@ public class EchoServer {
     private HashMap<String, String> translations = new HashMap<>();
     public BlockingQueue<ClientHandler> connectedClients = new ArrayBlockingQueue<>(10);
     public BlockingQueue<Msg> messages = new ArrayBlockingQueue<>(10);
+    public Quiz quiz;
 
     public EchoServer(int port) {
         this.port = port;
@@ -64,5 +65,20 @@ public class EchoServer {
         try {message = messages.take();}
         catch (InterruptedException e) {e.printStackTrace();}
         return message;
+    }
+
+    public void startOrJoinQuiz(ClientHandler cl) {
+        if (quiz == null) {
+            startQuizThread();
+        }
+        if (!quiz.participantExists(cl)) {
+            quiz.addQuizParticipant(cl);
+        }
+    }
+
+    public void startQuizThread() {
+        ExecutorService quizES = Executors.newFixedThreadPool(1);
+        quiz = new Quiz();
+        quizES.execute(quiz);
     }
 }
