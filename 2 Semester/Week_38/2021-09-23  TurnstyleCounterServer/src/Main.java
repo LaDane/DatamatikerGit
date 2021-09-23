@@ -10,7 +10,7 @@ public class Main {
         int expectedTurnstyles = -1;
 
         while (invalidTurnstylesAmount) {
-            String userInput = getUserInput("Input expected turn styles");
+            String userInput = getUserInput("Input expected clients");
             expectedTurnstyles = parseStringInt(userInput);
             if (expectedTurnstyles > 0) {
                 invalidTurnstylesAmount = false;

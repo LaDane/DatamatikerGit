@@ -26,6 +26,7 @@ public class EchoServer {
 
         ServerSocket serverSocket = new ServerSocket(port);
         ExecutorService clientHandlerES = Executors.newFixedThreadPool(10);
+        System.out.println("Ready for new clients to connect");
         while(true) {
             Socket client = serverSocket.accept();
             ClientHandler clientHandler = new ClientHandler(client, this);

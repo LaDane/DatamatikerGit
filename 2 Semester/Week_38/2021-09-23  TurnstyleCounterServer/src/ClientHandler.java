@@ -30,6 +30,13 @@ public class ClientHandler implements Runnable{
                 actionSwitch(sc.nextLine());
                 if (isTurnstyle || isMonitor)
                     typeSet = true;
+
+                String connectedMsg = "";
+                if (isTurnstyle)
+                    connectedMsg = "Client type 'Turnstyle' connected";
+                if (isMonitor)
+                    connectedMsg = "Client type 'Monitor' connected";
+                System.out.println(connectedMsg);
             }
 
             if (!sc.hasNextLine())
@@ -50,13 +57,14 @@ public class ClientHandler implements Runnable{
             case "1": pw.println("Client type set to : "+ actionSetClientType("1")); break;
             case "2": pw.println("Client type set to : "+ actionSetClientType("2")); break;
             case "+": pw.println("Added spectator. Total : "+ actionIncreaseSpectator()); break;
-            case "=": pw.println("Total spectators : "+ actionGetTotalSpectators()); break;
+            case "=": pw.println(actionGetTotalSpectators()); break;
             default: pw.println("Invalid command"); break;
         }
     }
 
     private void clientClose() {
         echoServer.removeClient(this);
+        System.out.println(client.toString() +" has disconnected");
 
         try {client.close();}
         catch (IOException e) {e.printStackTrace();}
