@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise06</title>
+</head>
+<body>
+
+<h1>Travel reservation form</h1>
+<h2>* denotes mandatory</h2>
+
+<form>
+    <label for="fname">Full name*:</label><br>
+    <input type="text" id="fname" value="FirstName LastName"><br><br>
+
+    <label for="email">Email address*:</label><br>
+    <input type="email" id="email" value="EMAIL_ADDRESS"><br><br>
+
+    <label>Select Tour Package*:</label><br>
+    <select>
+        <option value="goa">Goa</option>
+        <option value="bat">Bat</option>
+        <option value="pol">Pol</option>
+    </select><br><br>
+
+    <label for="arrival">Arrival date*:</label><br>
+    <input type="date" id="arrival" value="m/d/y"><br><br>
+
+    <label for="amount">Number of persons*:</label><br>
+    <input type="number" id="amount" value="UNKOWN_TYPE"><br><br>
+
+    <label>What would you want to avail?*</label><br>
+    <input type="Checkbox" name="avail" value="boarding">Boarding<br>
+    <input type="Checkbox" name="avail" value="fooding">Fooding<br>
+    <input type="Checkbox" name="avail" value="sight">Sight Seeing<br><br>
+
+    <label for="discount">Discount Coupon Code:</label><br>
+    <input type="text" id="discount" value="UNKOWN_TYPE"><br><br>
+
+    <label>Terms and Conditions*</label><br>
+    <input type="radio" name="terms" value="agree">I agree
+    <input type="radio" name="terms" value="disagree">I disagree<br><br>
+
+    <input type="submit" value="Complete Reservation">
+</form>
+
+<p>
+    <a href="exercise05.html">Exercise 05</a> <br/>
+</p>
+
+</body>
+</html>

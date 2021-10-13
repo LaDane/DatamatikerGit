@@ -1,0 +1,15 @@
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 24px;
+}
+
+.wrapper p::first-letter {
+    color: blue;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.wrapper p::first-line {
+    color: red;
+}
