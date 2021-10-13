@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My html template v. 1.0</title>
+</head>
+<body>
+
+<article>
+
+    <header>
+        Logo and link to homepage. Header should have a background color.
+    </header>
+
+    <section>
+        <h1>My html demo contained in first heading</h1>
+        <p>Paragraph = Here we can write some text</p>
+    </section>
+
+    <section>
+        <h2>Here is a second heading</h2>
+        <p>Lorem ipsum is dummy text...</p>
+    </section>
+
+    <section>
+        <h3>Here we will create a formula</h3>
+
+        <!--use post instead of get to reduce amount of chars in url-->
+        <form action="receiver.html" method="get">
+            <label>Name:</label> <input type="text" maxlength="50"/> <br/>
+            <label>Email:</label> <input type="text" maxlength="100"/> <br/>
+            <br/> <br/>
+
+            <input type="radio" name="gender" value="male"> Male <br/>
+            <input type="radio" name="gender" value="female"> Female <br/>
+            <input type="radio" name="gender" value="other"> Other <br/>
+            <br/> <br/>
+
+            <input type="checkbox" name="vehicle1" value="bike" checked> I have a bike <br/>
+            <input type="checkbox" name="vehicle1" value="car"> I have a car <br/>
+            <input type="checkbox" name="vehicle1" value="boat"> I have a boat <br/>
+            <br/> <br/>
+
+            <select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <br/> <br/>
+    </section>
+
+    <footer>
+        Footer should have contact info and links
+    </footer>
+
+</article>
+
+</body>
+</html>

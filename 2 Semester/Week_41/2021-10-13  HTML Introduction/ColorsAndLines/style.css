@@ -1,0 +1,55 @@
+/* My demo style sheet */
+
+body {
+    font-family: Arial, serif;
+    font-size: 18px;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: cornflowerblue;
+    font-size: 48px;
+}
+
+h2 {
+    color: cornflowerblue;
+    font-size: 32px;
+}
+
+header {
+    width: 1024px;
+    border: 1px solid green;
+    background-color: #00163b;
+    padding: 10px;
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 1px solid #00163b;
+    padding-top: 10px;
+}
+
+#name {
+    float: left;
+    width: 70px;
+}
+
+#email {
+    float: left;
+    width: 70px;
+}
+
+.labelInput {
+    float: left;
+    width: 100px;
+}
+
+.formsection {
+    margin-bottom: 10px;
+}
+
+.formitem {
+    margin-bottom: 5px;
+}
