@@ -12,3 +12,7 @@ Week 37
 	2021-09-13  Ball Bounce Thread Exercise		Using multiple threads to prevent locking of UI
 	2021-09-15  CounterThread			Exploring use of synchronized methods
 	2021-09-15  ConcurrencyExercises		Exercises using synchronized variables
+
+
+
+cph-aw132@cphbusiness.dk
