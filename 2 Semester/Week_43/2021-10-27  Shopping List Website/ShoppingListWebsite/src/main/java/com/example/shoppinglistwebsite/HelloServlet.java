@@ -1,6 +1,9 @@
 package com.example.shoppinglistwebsite;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -15,7 +18,8 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        String navn = request.getParameter("name");
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
         String pass1 = request.getParameter("pass1");
         String pass2 = request.getParameter("pass2");
 
@@ -28,11 +32,21 @@ public class HelloServlet extends HttpServlet {
 //            out.println("</body></html>");
 
             HttpSession session = request.getSession();
-            session.setAttribute("navn", navn);;
+            session.setAttribute("fname", fname);
+            session.setAttribute("lname", lname);
             session.setAttribute("sessionId", session.getId());
 
-            request.setAttribute("navn", navn);
+            request.setAttribute("fname", fname);
             request.setAttribute("session", session);
+
+            ServletContext servletContext = request.getServletContext();
+            Users newUser = new Users(fname, lname);
+            List<Users> usersList = (List<Users>) session.getAttribute("usersList");
+            if (usersList == null) {
+                usersList = new ArrayList<>();
+            }
+            usersList.add(newUser);
+            servletContext.setAttribute("usersList", usersList);
 
             request.getRequestDispatcher("WEB-INF/Bruger.jsp").forward(request, response);
         }
