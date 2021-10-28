@@ -17,9 +17,25 @@
 </head>
 <body>
 <div class="container">
-    <h1>Shopping list for the trip</h1>
-    Logged in as user: ${sessionScope.fname}
-    <div class="card">
+    <h1 class="float-left">Shopping list for the trip</h1>
+<%--        <label class="float-right">Logged in as user:</label>--%>
+<%--        <label class="float-right">${sessionScope.fname} ${sessionScope.lname}</label>--%>
+    <div class="float-right">
+        <table class="table">
+            <tbody>
+                <tr><td>Logged in as:</td></tr>
+                <tr><td>${sessionScope.fname} ${sessionScope.lname}</td></tr>
+                <tr><td>
+                    <form action="HelloServlet" method="get">
+                        <button type="submit" class="btn btn-warning">Logout</button>
+                    </form>
+                </td></tr>
+            </tbody>
+        </table>
+    </div>
+<%--    Logged in as user: ${sessionScope.fname} ${sessionScope.lname}--%>
+    <br><br><br>
+    <div class="card float-none">
         <div class="card-body">
             <form action="TilføjEmneServlet", method="post">
 
@@ -37,66 +53,79 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-secondary float-left">Submit</button>
             </form>
+<%--            <form action="OversigtServlet" method="get">--%>
+<%--                <button type="submit" class="btn btn-success float-right">Overview of all items</button>--%>
+<%--            </form>--%>
         </div>
     </div>
 </div>
-<br><br>
+<br>
 <div class="container">
-    <h2>Your current shopping list</h2>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>First name</th>
-                        <th>Last name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="itemList" items="${sessionScope.itemList}">
-                        <tr>
-                            <td>${itemList.item}</td>
-                            <td>${itemList.quantity}</td>
-                            <td>${itemList.fname}</td>
-                            <td>${itemList.lname}</td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+    <div class="card">
+        <div class="card-body">
+            <div>
+                <h2 class="float-left">Your current shopping list</h2>
+                <form action="OversigtServlet" method="get">
+                    <button type="submit" class="btn btn-secondary float-right">Overview</button>
+                </form>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="itemList" items="${sessionScope.itemList}">
+                                <tr>
+                                    <td>${itemList.item}</td>
+                                    <td>${itemList.quantity}</td>
+                                    <td>${itemList.fname}</td>
+                                    <td>${itemList.lname}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-Du er nu logget ind som ${sessionScope.fname}
-<%--med session-id ${sessionScope.sessionId} <br><br>--%>
-<h2>Her kan du tilføje emner til din huskeliste</h2> <br><br>
+<%--Du er nu logget ind som ${sessionScope.fname}--%>
+<%--&lt;%&ndash;med session-id ${sessionScope.sessionId} <br><br>&ndash;%&gt;--%>
+<%--<h2>Her kan du tilføje emner til din huskeliste</h2> <br><br>--%>
 
-<form action="TilføjEmneServlet", method="post">
-    <label for="emne">Emne:</label><br>
-    <input type="text" id="emne" name="emne" value="Saft"><br>
+<%--<form action="TilføjEmneServlet", method="post">--%>
+<%--    <label for="emne">Emne:</label><br>--%>
+<%--    <input type="text" id="emne" name="emne" value="Saft"><br>--%>
 
-<%--    <label for="Quantity">Quantity:</label><br>--%>
-<%--    <input type="text" id="Quantity" name="Quantity"><br><br>--%>
-<%--    --%>
-    <input type="submit" value="Tilføj emne">
-</form>
+<%--&lt;%&ndash;    <label for="Quantity">Quantity:</label><br>&ndash;%&gt;--%>
+<%--&lt;%&ndash;    <input type="text" id="Quantity" name="Quantity"><br><br>&ndash;%&gt;--%>
+<%--&lt;%&ndash;    &ndash;%&gt;--%>
+<%--    <input type="submit" value="Tilføj emne">--%>
+<%--</form>--%>
 
-<c:forEach items="${sessionScope.itemList}" var="item">
-    ${item}<br>
-</c:forEach>
+<%--<c:forEach items="${sessionScope.itemList}" var="item">--%>
+<%--    ${item}<br>--%>
+<%--</c:forEach>--%>
 
-<h1>Alle emner der er tilføjet af brugere</h1><br>
-<c:forEach items="${applicationScope.alleBrugeresEmner}" var="emne">
-    ${emne}<br>
-</c:forEach>
+<%--<h1>Alle emner der er tilføjet af brugere</h1><br>--%>
+<%--<c:forEach items="${applicationScope.alleBrugeresEmner}" var="emne">--%>
+<%--    ${emne}<br>--%>
+<%--</c:forEach>--%>
 
-<form action="OversigtServlet" method="get">
-    <input type="submit" value="Gå til oversigt">
-</form>
+<%--<form action="OversigtServlet" method="get">--%>
+<%--    <input type="submit" value="Gå til oversigt">--%>
+<%--</form>--%>
 
 </body>
 </html>

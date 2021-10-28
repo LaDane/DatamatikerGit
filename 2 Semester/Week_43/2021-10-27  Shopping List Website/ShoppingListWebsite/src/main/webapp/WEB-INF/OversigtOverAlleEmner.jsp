@@ -14,8 +14,8 @@
 <body>
 
 Her kan du få oversigten over alle emner.<br><br>
-<c:forEach items="${applicationScope.alleBrugeresEmner}" var="emne">
-    ${emne}<br>
+<c:forEach items="${applicationScope.allUserItems}" var="allUserItems">
+    ${allUserItems.item} ${allUserItems.quantity}<br>
 </c:forEach>
 
 </body>
