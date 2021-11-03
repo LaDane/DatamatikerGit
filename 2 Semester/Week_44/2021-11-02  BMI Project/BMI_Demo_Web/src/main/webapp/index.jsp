@@ -1,6 +1,19 @@
+<%@ page import="FunctionLayer.Toppings" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="includes/header.inc"%>
+
+<%!
+    @Override
+    public void jspInit() {
+        // Fyr kode af til initialisering. F.eks. befolke datastrukturer, lister etc..
+        Toppings.initTopping();
+    }
+%>
+
+<%
+    request.setAttribute("toppings", Toppings.getToppings());
+%>
 
     <div class="row">
 
@@ -28,6 +41,12 @@
             </form>
 
             <h3>${requestScope.message}</h3>
+
+            <ul>
+                <c:forEach var="topping" items="${toppings}">
+                    <li>${topping.name} ${topping.price}</li>
+                </c:forEach>
+            </ul>
 
         </div>
         <div class="col-md-4"></div>
