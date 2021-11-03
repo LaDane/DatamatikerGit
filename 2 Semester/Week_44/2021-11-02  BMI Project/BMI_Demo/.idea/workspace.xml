@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a373beb8-8796-4c04-861f-df0030fd8274" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BMI_Demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bmi_header_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/projektskabelon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/src/main/java/PresentationLayer/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/src/main/webapp/WEB-INF/result.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/src/main/webapp/images/bmi_header_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/src/main/webapp/includes/footer.inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/src/main/webapp/includes/header.inc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BMI_Demo_Web/src/main/webapp/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="a373beb8-8796-4c04-861f-df0030fd8274" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
