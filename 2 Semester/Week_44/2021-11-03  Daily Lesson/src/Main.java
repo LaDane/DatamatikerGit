@@ -12,29 +12,35 @@ public class Main {
         objectList.add(new Kaffemaskine());
         objectList.add(new Riskoger());
         objectList.add(new Fly());
-        objectList.add(new Bil());
         objectList.add(new Hund());
         objectList.add(new Riskoger());
         objectList.add(new Fly());
         objectList.add(new Kaffemaskine());
-        objectList.add(new Bil());
         objectList.add(new Hund());
         objectList.add(new Riskoger());
         objectList.add(new Fly());
-        objectList.add(new Bil());
         objectList.add(new Hund());
         objectList.add(new Riskoger());
 
         for (Command command : objectList) {
-//            if (o instanceof Hund)
-//                ((Hund) o).hyl();
-//            if (o instanceof Riskoger)
-//                ((Riskoger) o).kogRis();
-//            if (o instanceof Kaffemaskine)
-//                ((Kaffemaskine) o).bryg();
-//            if (o instanceof Bil)
-//                ((Bil) o).kør();
             command.execute();
+        }
+
+        Bil bil1 = new Bil(new BenzinMotor());
+        Bil bil2 = new Bil(new DieselMotor());
+        Bil bil3 = new Bil(new ElMotor());
+        Bil bil4 = new Bil(new BenzinMotor());
+        Bil bil5 = new Bil(new DieselMotor());
+
+        List<Bil> bils = new ArrayList<>();
+        bils.add(bil1);
+        bils.add(bil2);
+        bils.add(bil3);
+        bils.add(bil4);
+        bils.add(bil5);
+
+        for (Bil bil : bils) {
+            bil.motor.kør();
         }
     }
 }

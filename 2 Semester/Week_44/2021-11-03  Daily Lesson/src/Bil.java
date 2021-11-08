@@ -1,11 +1,10 @@
-public class Bil extends Command{
+public class Bil{
 
-    public void kør() {
-        System.out.println("vrooom vroom");
-    }
+    Motor motor;
 
-    @Override
-    void execute() {
-        kør();
+    public Bil() {}
+
+    public Bil(Motor motor) {
+        this.motor = motor;
     }
 }
