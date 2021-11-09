@@ -1,4 +1,5 @@
 <%@ page import="FunctionLayer.Toppings" %>
+<%@ page import="Util.Initializer" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="includes/header.inc"%>
@@ -7,12 +8,18 @@
     @Override
     public void jspInit() {
         // Fyr kode af til initialisering. F.eks. befolke datastrukturer, lister etc..
-        Toppings.initTopping();
+//        Toppings.initTopping();
     }
 %>
 
 <%
-    request.setAttribute("toppings", Toppings.getToppings());
+//    request.setAttribute("toppings", Toppings.getToppings());
+    if (request.getServletContext().getAttribute("sportList") == null) {
+        request.getServletContext().setAttribute("sportList", Initializer.getSportList());
+    }
+    if (request.getServletContext().getAttribute("infoList") == null) {
+        request.getServletContext().setAttribute("infoList", Initializer.getInfoList());
+    }
 %>
 
     <div class="row">
@@ -55,33 +62,20 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Angiv din primære idræt:</label>
                     <select class="form-control" name="sport" id="exampleFormControlSelect1">
-                        <option value="1">Jogging</option>
-                        <option value="2">Fodbold</option>
-                        <option value="3">Håndbold</option>
-                        <option value="4">Gymnastik</option>
-                        <option value="5">Yoga</option>
-                        <option value="6">Andet</option>
+                        <c:forEach var="sportsItem" items="${applicationScope.sportList}">
+                            <option value="${sportsItem.sports_id}">${sportsItem.name}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="info" value="1" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
-                        Jeg går op i sund kost
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="info" value="2" id="defaultCheck2">
-                    <label class="form-check-label" for="defaultCheck2">
-                        Jeg har et sommerhus
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="info" value="3" id="defaultCheck3">
-                    <label class="form-check-label" for="defaultCheck3">
-                        Jeg har et kæledyr
-                    </label>
-                </div>
+                <c:forEach var="infoItem" items="${applicationScope.infoList}">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="info" value="${infoItem.info_id}" id="defaultCheck${infoItem.info_id}">
+                        <label class="form-check-label" for="defaultCheck${infoItem.info_id}">
+                            ${infoItem.name}
+                        </label>
+                    </div>
+                </c:forEach>
 
             </form>
 

@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import Util.BmiHelperFunctions;
 
@@ -36,7 +37,7 @@ public class Result extends Command {
         }
 
         String[] infos = request.getParameterValues("info");
-        List infoList = null;
+        List<String> infoList = null;
         if (infos != null) {
             infoList = Arrays.asList(infos);
         }
@@ -48,6 +49,8 @@ public class Result extends Command {
         request.setAttribute("gender", gender);
         request.setAttribute("sport", sport);
         request.setAttribute("infos", infoList);
+
+        LogicFacade.insertBmiItem(height, weight, category, bmi, gender, sport, infoList);
 
         return "result";
     }

@@ -1,8 +1,11 @@
 package DBAccess;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 /**
  The purpose of Connector is to...
@@ -41,8 +44,20 @@ public class Connector {
             // Localhost
             URL = "jdbc:mysql://localhost:3306/useradmin?serverTimezone=CET&useSSL=false";
             USERNAME = "root";
-            PASSWORD = "root";
+            PASSWORD = getSecret();
         }
+    }
+
+    private static String getSecret() {
+        String secretWord = "file not found";
+        try {
+            Scanner scanner = new Scanner(new File("D:\\Skole\\Datamatiker\\DatamatikerGit\\2 Semester\\Week_44\\2021-11-02  BMI Project\\BMI_Demo_Web\\src\\main\\java\\DBAccess\\password.secret"));
+            secretWord = scanner.nextLine();
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return secretWord;
     }
 
 }
