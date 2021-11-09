@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acec4101-e23a-4739-ad50-40d5d629c24d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Week_41/2021-10-13  Week 41 Exercises/Exercises/exercise03.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week_41/2021-10-13  Week 41 Exercises/Exercises/exercise03.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Week_44/2021-11-03  Sem2 Startcode/sem2-startcode-main/.idea/artifacts/bmi_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_44/2021-11-03  Sem2 Startcode/sem2-startcode-main/.idea/artifacts/bmi_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week_44/2021-11-03  Sem2 Startcode/sem2-startcode-main/.idea/artifacts/bmi_war_exploded.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635233728304</updated>
       <workItem from="1635233729777" duration="64000" />
+      <workItem from="1636449198753" duration="912000" />
     </task>
     <servers />
   </component>

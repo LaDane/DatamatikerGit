@@ -14,11 +14,11 @@
         <table class="table table-striped">
             <tr>
                 <td>Højde</td>
-                <td>${requestScope.height} kg</td>
+                <td>${requestScope.height} cm</td>
             </tr>
             <tr>
                 <td>Vægt</td>
-                <td>${requestScope.weight} cm</td>
+                <td>${requestScope.weight} kg</td>
             </tr>
             <tr>
                 <td>BMI</td>
@@ -29,6 +29,14 @@
                 <td>${requestScope.category}</td>
             </tr>
         </table>
+
+        <p>${requestScope.gender}</p>
+        <p>${requestScope.sport}</p>
+        <p>
+            <c:forEach var="infoitem" items="${requestScope.infos}">
+                if: ${infoitem}<br/>
+            </c:forEach>
+        </p>
 
         <div class="text-center">
             <a href="FrontController?target=redirect&destination=index">Til forsiden</a>
