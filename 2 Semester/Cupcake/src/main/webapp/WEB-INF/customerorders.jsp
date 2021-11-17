@@ -17,7 +17,7 @@
     <jsp:body>
 
         <div>
-            <h2>Customer Orders</h2>
+<%--            <h2>Customer Orders</h2>--%>
 
             <h3>User: ${sessionScope.user.email}</h3>
 
@@ -41,7 +41,7 @@
                             <tr>
                                 <td>${orderEntriesCombined.getOrderId()}</td>
                                 <c:if test="${sessionScope.user.role == 'employee'}">
-                                    <th>${orderEntriesCombined.getUsername()}</th>
+                                    <td>${orderEntriesCombined.getUsername()}</td>
                                 </c:if>
                                 <td>${orderEntriesCombined.getOrderCupcakeAmount()}</td>
                                 <td>$${orderEntriesCombined.getOrderPrice()}0</td>
@@ -49,28 +49,21 @@
                                     <c:if test="${sessionScope.user.role == 'employee'}">
                                         <form action="${pageContext.request.contextPath}/fc/employeeViewOrderCommand" method="get">
                                             <button type="submit" class="btn btn-info btn-sm"
-                                                    name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View</button>
+                                                    name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View Order</button>
                                         </form>
                                     </c:if>
 
                                     <c:if test="${sessionScope.user.role == 'customer'}">
                                         <form action="${pageContext.request.contextPath}/fc/customerViewOrderCommand" method="get">
                                             <button type="submit" class="btn btn-info btn-sm"
-                                                    name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View</button>
+                                                    name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View Order</button>
                                         </form>
                                     </c:if>
                                 </td>
                             </tr>
-<%--                            <c:set var="orderTotal" value="${orderTotal + order.getOrderEntryTotal()}" scope="page"/>--%>
                         </c:forEach>
                         </tbody>
                     </table>
-
-<%--                    <div class="form-group row mb-5">--%>
-<%--                        <div class="form-group">--%>
-<%--                            <label class="float-left">Order total: <strong>$${orderTotal}0</strong></label>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
                 </div>
             </c:if>
         </div>

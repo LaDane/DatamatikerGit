@@ -44,7 +44,7 @@
 
         <c:if test="${sessionScope.user.role == 'employee'}">
             <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/employeeOrdersCommand">Orders</a>
-            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/customerOrdersCommand">Users</a>
+            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/usersCommand">Users</a>
         </c:if>
     </nav>
 

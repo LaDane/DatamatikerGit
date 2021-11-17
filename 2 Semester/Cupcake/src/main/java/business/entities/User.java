@@ -1,5 +1,10 @@
 package business.entities;
 
+import business.persistence.OrderCombinedMapper;
+import business.persistence.OrderMapper;
+
+import java.util.List;
+
 public class User
 {
     private int id; // just used to demo retrieval of autogen keys in UserMapper
@@ -70,5 +75,15 @@ public class User
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public int getAmountOfOrdersMade() {
+        List<OrderEntry> customerOrderEntries = OrderMapper.getOrderEntriesByUserId(getId());
+
+        if (customerOrderEntries != null) {
+            List<OrderEntryCombined> customerOrderEntriesCombined = OrderCombinedMapper.getOrderEntryCombined(customerOrderEntries);
+            return customerOrderEntriesCombined.size();
+        }
+        return 0;
     }
 }

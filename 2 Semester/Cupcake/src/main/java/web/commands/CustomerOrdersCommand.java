@@ -3,6 +3,7 @@ package web.commands;
 import business.entities.OrderEntry;
 import business.entities.OrderEntryCombined;
 import business.entities.User;
+import business.persistence.OrderCombinedMapper;
 import business.persistence.OrderMapper;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,27 +27,7 @@ public class CustomerOrdersCommand extends CommandProtectedPage{
         List<OrderEntry> customerOrderEntries = OrderMapper.getOrderEntriesByUserId(userId);
 
         if (customerOrderEntries != null) {
-            List<OrderEntryCombined> customerOrderEntriesCombined = new ArrayList<>();
-            long lastOrderId = 0;
-
-            for (OrderEntry customerOrderEntry : customerOrderEntries) {
-                if (lastOrderId != customerOrderEntry.getOrderEntryId()) {
-                    lastOrderId = customerOrderEntry.getOrderEntryId();
-
-                    customerOrderEntriesCombined.add(new OrderEntryCombined(
-                            customerOrderEntry.getOrderEntryId(),
-                            customerOrderEntry.getOrderEntryCupcakeAmount(),
-                            customerOrderEntry.getOrderEntryTotal()
-                    ));
-                } else {
-                    for (OrderEntryCombined orderEntryCombined : customerOrderEntriesCombined) {
-                        if (orderEntryCombined.getOrderId() == lastOrderId) {
-                            orderEntryCombined.setOrderCupcakeAmount(orderEntryCombined.getOrderCupcakeAmount() + customerOrderEntry.getOrderEntryCupcakeAmount());
-                            orderEntryCombined.setOrderPrice(orderEntryCombined.getOrderPrice() + customerOrderEntry.getOrderEntryTotal());
-                        }
-                    }
-                }
-            }
+            List<OrderEntryCombined> customerOrderEntriesCombined = OrderCombinedMapper.getOrderEntryCombined(customerOrderEntries);
             session.setAttribute("orderEntriesCombined", customerOrderEntriesCombined);
         }
 

@@ -35,6 +35,10 @@ public abstract class Command
         commands.put("customerViewOrderCommand", new CustomerViewOrderCommand("customerorderspecific", "customer"));
         commands.put("employeeViewOrderCommand", new CustomerViewOrderCommand("customerorderspecific", "employee"));
         commands.put("employeeOrdersCommand", new EmployeeOrdersCommand("customerorders", "employee"));
+        commands.put("usersCommand", new UsersCommand("users", "employee"));
+        commands.put("userViewCommandEmployee", new UserViewCommand("userpage", "employee"));
+//        commands.put("userViewCommandCustomer", new UserViewCommand("userpage", "customer"));
+        commands.put("userEditBalanceCommand", new UserEditBalanceCommand("userpage", "employee"));
     }
 
     public static Command fromPath(
