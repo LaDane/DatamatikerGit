@@ -71,10 +71,10 @@
                         <div class="form-group">
                             <form action="${pageContext.request.contextPath}/fc/basketBuyCommand" method="get">
                                 <label class="float-left">Basket total: <strong>$${basketTotal}0</strong></label>
-                                <c:if test="${sessionScope.user.balance < basketTotal}">
+                                <c:if test="${sessionScope.user.balance < basketTotal || sessionScope.basketItems.size() == 0 || sessionScope.basketItems == null}">
                                     <button type="submit" class="btn btn-lg btn-primary float-end" disabled>Buy</button>
                                 </c:if>
-                                <c:if test="${sessionScope.user.balance >= basketTotal}">
+                                <c:if test="${sessionScope.user.balance >= basketTotal && sessionScope.basketItems.size() != 0 && sessionScope.basketItems != null}">
                                     <button type="submit" class="btn btn-lg btn-primary float-end">Buy</button>
                                 </c:if>
                             </form>

@@ -26,8 +26,10 @@ public abstract class Command
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
         commands.put("registercommand", new RegisterCommand(""));
-        commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
-        commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
+//        commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
+        commands.put("customerpage", new UserViewCommand("userpage", "customer"));
+//        commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
+        commands.put("employeepage", new UserViewCommand("userpage", "employee"));
         commands.put("basket", new CommandUnprotectedPage("basket"));
         commands.put("basketRemoveCommand", new BasketRemoveCommand("basket"));
         commands.put("basketBuyCommand", new BasketBuyCommand("orderconfirmation", "customer"));
@@ -37,8 +39,9 @@ public abstract class Command
         commands.put("employeeOrdersCommand", new EmployeeOrdersCommand("customerorders", "employee"));
         commands.put("usersCommand", new UsersCommand("users", "employee"));
         commands.put("userViewCommandEmployee", new UserViewCommand("userpage", "employee"));
-//        commands.put("userViewCommandCustomer", new UserViewCommand("userpage", "customer"));
+        commands.put("userViewCommandCustomer", new UserViewCommand("userpage", "customer"));
         commands.put("userEditBalanceCommand", new UserEditBalanceCommand("userpage", "employee"));
+        commands.put("orderRemoveCommand", new OrderRemoveCommand("customerorders", "employee"));
     }
 
     public static Command fromPath(

@@ -37,7 +37,6 @@ public class FrontController extends HttpServlet
         // Initialize database connection
         if (database == null) {
             try {
-//                PASSWORD = getSecret();
                 database = new Database(USER, PASSWORD, URL);
             }
             catch (ClassNotFoundException ex) {
@@ -46,15 +45,6 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
-
-//        List<CupcakeBottom> cupcakesBottoms = CupcakeBottoms.getCupcakeBottoms();
-//        for (CupcakeBottom cb : cupcakesBottoms) {
-//            System.out.println(cb.getCupcakeBottomName());
-//        }
-//
-//        for (CupcakeTop cupcakesTop : CupcakeTops.getCupcakeTops()) {
-//            System.out.println(cupcakesTop.getCupcakeTopName());
-//        }
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -115,9 +105,7 @@ public class FrontController extends HttpServlet
             Scanner scanner = new Scanner(new File("D:\\Skole\\Datamatiker\\DatamatikerGit\\2 Semester\\Cupcake\\src\\main\\java\\web\\password.secret"));
             secretWord = scanner.nextLine();
             scanner.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        } catch (FileNotFoundException ignored) {}
         return secretWord;
     }
 }

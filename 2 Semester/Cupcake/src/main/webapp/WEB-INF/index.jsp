@@ -85,7 +85,7 @@
                     Order total: <strong>${lastBasketItem.total}</strong>
                 </p>
                 <div class="text-center">
-                    <a class="text-dark" href="${pageContext.request.contextPath}/fc/basket">To shopping cart</a>
+                    <a class="text-dark" href="${pageContext.request.contextPath}/fc/basket">To shopping basket</a>
                 </div>
             </c:if>
 

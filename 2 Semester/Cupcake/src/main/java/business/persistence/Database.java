@@ -22,6 +22,7 @@ public class Database
             URL = System.getenv("JDBC_CONNECTION_STRING");
         } else
         {
+            // Localhost
             USER = user;
             PASSWORD = password;
             URL = url;

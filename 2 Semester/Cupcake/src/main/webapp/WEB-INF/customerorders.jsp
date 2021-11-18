@@ -34,6 +34,9 @@
                             <th>Cupcake Amount</th>
                             <th>Order Total</th>
                             <th> </th>
+                            <c:if test="${sessionScope.user.role == 'employee'}">
+                                <th> </th>
+                            </c:if>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,21 +48,29 @@
                                 </c:if>
                                 <td>${orderEntriesCombined.getOrderCupcakeAmount()}</td>
                                 <td>$${orderEntriesCombined.getOrderPrice()}0</td>
-                                <td>
-                                    <c:if test="${sessionScope.user.role == 'employee'}">
+                                <c:if test="${sessionScope.user.role == 'employee'}">
+                                    <td>
                                         <form action="${pageContext.request.contextPath}/fc/employeeViewOrderCommand" method="get">
                                             <button type="submit" class="btn btn-info btn-sm"
-                                                    name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View Order</button>
+                                                name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View Order</button>
                                         </form>
-                                    </c:if>
+                                    </td>
+                                    <td>
+                                        <form action="${pageContext.request.contextPath}/fc/orderRemoveCommand" method="get">
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                name="removeOrderId" value="${orderEntriesCombined.getOrderId()}">Remove Order</button>
+                                        </form>
+                                    </td>
+                                </c:if>
 
-                                    <c:if test="${sessionScope.user.role == 'customer'}">
+                                <c:if test="${sessionScope.user.role == 'customer'}">
+                                    <td>
                                         <form action="${pageContext.request.contextPath}/fc/customerViewOrderCommand" method="get">
                                             <button type="submit" class="btn btn-info btn-sm"
-                                                    name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View Order</button>
+                                                name="viewOrderId" value="${orderEntriesCombined.getOrderId()}">View Order</button>
                                         </form>
-                                    </c:if>
-                                </td>
+                                    </td>
+                                </c:if>
                             </tr>
                         </c:forEach>
                         </tbody>

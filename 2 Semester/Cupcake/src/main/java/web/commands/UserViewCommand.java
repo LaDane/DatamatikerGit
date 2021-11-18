@@ -25,13 +25,23 @@ public class UserViewCommand extends CommandProtectedPage{
         UserFacade userFacade = new UserFacade(FrontController.database);
         List<User> allUsers = userFacade.getAllUsers();
 
-        int viewUserId = Integer.parseInt(request.getParameter("viewUserId"));
+        Object userId = request.getParameter("viewUserId");
+        int viewUserId = 0;
         User user = null;
 
-        for (User aUser : allUsers) {
-            if (aUser.getId() == viewUserId) {
-                user = aUser;
-                break;
+        if (userId != null) {
+            viewUserId = Integer.parseInt(request.getParameter("viewUserId"));
+        } else {
+            user = (User) session.getAttribute("user");
+            viewUserId = user.getId();
+        }
+
+        if (user == null) {
+            for (User aUser : allUsers) {
+                if (aUser.getId() == viewUserId) {
+                    user = aUser;
+                    break;
+                }
             }
         }
 

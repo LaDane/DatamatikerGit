@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -40,12 +41,15 @@
 
         <c:if test="${sessionScope.user.role == 'customer'}">
             <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/customerOrdersCommand">Orders</a>
+            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/userViewCommandCustomer">Profile</a>
         </c:if>
 
         <c:if test="${sessionScope.user.role == 'employee'}">
             <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/employeeOrdersCommand">Orders</a>
             <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/usersCommand">Users</a>
+            <a class="p-2 text-dark" href="${pageContext.request.contextPath}/fc/userViewCommandEmployee">Profile</a>
         </c:if>
+
     </nav>
 
     <div>
@@ -54,6 +58,21 @@
             ${sessionScope.user.email}
             $${sessionScope.user.balance}0
         </c:if>
+
+<%--        <form action="${pageContext.request.contextPath}/fc/basket" method="get">--%>
+<%--            <button type="submit" class="btn btn-sm btn-outline-secondary">--%>
+<%--                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">--%>
+<%--                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>--%>
+<%--                </svg>--%>
+<%--            </button>--%>
+<%--        </form>--%>
+
+        <a type="button" class="btn btn-sm  btn-outline-secondary"
+           href="${pageContext.request.contextPath}/fc/basket">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"></path>
+            </svg>
+        </a>
 
         <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
         <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>

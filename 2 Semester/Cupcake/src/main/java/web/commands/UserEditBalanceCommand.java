@@ -35,6 +35,12 @@ public class UserEditBalanceCommand extends CommandProtectedPage{
             }
         }
 
+        User userSession = (User) session.getAttribute("user");
+        if (userSession.getId() == user.getId()) {
+            userSession.setBalance(newUserBalance);
+            session.setAttribute("user", userSession);
+        }
+
         if (user != null) {
             user.setBalance(newUserBalance);
 
