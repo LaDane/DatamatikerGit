@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Cupcake">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cupcake</output-path>
+    <root id="archive" name="Cupcake.war">
+      <element id="artifact" artifact-name="Cupcake:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -23,7 +23,7 @@
         This header is inspired by this bootstrap
         example: https://getbootstrap.com/docs/5.0/examples/pricing/
     -->
-<div>
+<div class="text-center">
     <img src="${pageContext.request.contextPath}/img/banner.png" class="img-fluid px-3 my-2 rounded"/>
 </div>
 

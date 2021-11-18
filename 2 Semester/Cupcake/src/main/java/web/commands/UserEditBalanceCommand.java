@@ -24,7 +24,7 @@ public class UserEditBalanceCommand extends CommandProtectedPage{
         HttpSession session = request.getSession();
 
         int userId = Integer.parseInt(request.getParameter("userId"));
-        int newUserBalance = Integer.parseInt(request.getParameter("newUserBalance"));
+        double newUserBalance = Double.parseDouble(request.getParameter("newUserBalance"));
 
         UserFacade userFacade = new UserFacade(FrontController.database);
         List<User> allUsers = userFacade.getAllUsers();
