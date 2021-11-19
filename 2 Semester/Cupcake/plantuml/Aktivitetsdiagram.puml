@@ -1,0 +1,34 @@
+@startuml
+Title Cupcake Aktivitetsdiagram
+|Kunde|
+    start
+    :Gå til hjemmeside;
+    repeat
+    :Login / Signup;
+|#AntiqueWhite|System|
+    repeat while (Validere login?) is (No)
+    ->Yes;
+    :Log kunde ind;
+|Kunde|
+    :Vælg cupcake topping, bund, og antal;
+    :Læg ordre i kurv;
+    :Bestil ordre;
+|System|
+    :Modtag betaling;
+    :Ordre]
+    split
+    |Kunde|
+    :Modtag ordrebekræftelse;
+    split again
+    |System|
+    :Ordre gemmes i database;
+|Butik|
+    :Ordre]
+    :Lav cupcakes ud fra ordre;
+    :Pak cupcakes;
+    :Cupcakes]
+|Kunde|
+    end split
+    :Afhent cupcakes;
+stop
+@enduml

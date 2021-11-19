@@ -1,0 +1,69 @@
+@startuml
+Title Domæne model
+
+' Entities
+
+class BasketItem {
+    cupcake : Cupcake
+    amount : int
+    total . double
+}
+
+class Cupcake {
+    cupcakeBottom : CupcakeBottom
+    cupcakeTop : CupcakeTop
+    cupcakePrice : double
+}
+
+class CupcakeBottom {
+    cupcakeBottomId : int
+    cupcakeBottomName : String
+    cupcakeBottomPrice : double
+}
+
+class CupcakeBottoms {
+    cupcakeBottoms : List<CupcakeBottom>
+}
+
+class CupcakeTop {
+    cupcakeTopId : int
+    cupcakeTopName : String
+    cupcakeTopPrice : double
+}
+
+class CupcakeTops {
+    cupcakeTops : List<CupcakeTop>
+}
+
+class OrderEntry {
+    orderEntryId : long
+    orderEntryUserId : int
+    orderEntryCupcakeBot : int
+    orderEntryCupcakeTop : int
+    orderEntryCupcakeAmount : int
+}
+
+class OrderEntryCombined {
+    orderId : long
+    orderCupcakeAmount : int
+    orderPrice : double
+    username : String
+}
+
+class User {
+    id : int
+    email : String
+    password : String
+    role : String
+    balance : double
+}
+
+' Entities relations
+BasketItem "1" *-- "1" Cupcake
+
+Cupcake "1" *-- "1" CupcakeBottom
+Cupcake "1" *-- "1" CupcakeTop
+
+CupcakeBottoms "1" *-- "*" CupcakeBottom
+CupcakeTops "1" *-- "*" CupcakeTop
+@enduml
