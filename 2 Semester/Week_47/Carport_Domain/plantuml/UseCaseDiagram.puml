@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+Title Use Case Diagram
+
+actor Employee <<Logged in>>
+actor Customer
+
+rectangle System {
+  Customer -- (Lav forespørgsel)
+  (Lav forespørgsel) .> (Register / Login) : include
+  Customer -- (Se godkente forespørgelser)
+  (Se godkente forespørgelser) .> (Login) : include
+
+  Employee -- (Se forespørgseler)
+  Employee -- (Godkend forespørgseler)
+  Employee -- (Send tilbud til customer)
+  Employee -- (Redigere matrialer)
+  Employee -- (Oversigt over brugere)
+
+}
+@enduml

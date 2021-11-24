@@ -30,6 +30,7 @@ public abstract class Command
         commands.put("customerpage", new UserViewCommand("userpage", "customer"));
 //        commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
         commands.put("employeepage", new UserViewCommand("userpage", "employee"));
+
         commands.put("basket", new CommandUnprotectedPage("basket"));
         commands.put("basketRemoveCommand", new BasketRemoveCommand("basket"));
         commands.put("basketBuyCommand", new BasketBuyCommand("orderconfirmation", "customer"));
