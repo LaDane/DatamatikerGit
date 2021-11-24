@@ -1,0 +1,32 @@
+@startuml
+Title Navigationdiagram Customer
+
+state index.jsp
+[*] --> index.jsp
+
+state loginpage.jsp
+index.jsp --> loginpage.jsp : User pressed login
+
+state userpage.jsp
+loginpage.jsp --> userpage.jsp : Succesfull login
+index.jsp --> userpage.jsp : User pressed Profile button
+
+state errorpage.jsp
+loginpage.jsp --> errorpage.jsp : Failed login
+
+userpage.jsp --> index.jsp : User pressed Home button
+
+state basket.jsp
+index.jsp --> basket.jsp : User pressed Shopping Cart button
+
+state orderconfirmation.jsp
+basket.jsp --> orderconfirmation.jsp : User pressed Buy button
+
+state customerorders.jsp
+index.jsp --> customerorders.jsp : User pressed Orders button
+
+state customerorderspecific.jsp
+customerorders.jsp --> customerorderspecific.jsp : User pressed View Order button
+
+
+@enduml
