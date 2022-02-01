@@ -1,0 +1,112 @@
+@startuml
+Title Domæne model
+
+' Entities
+hide circle
+hide methods
+
+class Materials {
+'    id : int
+'    name : String
+'    dimension : String
+'    description : String
+'    price : double
+}
+
+class Wood {
+'    id : int
+'    name : String
+'    dimension : String
+'    description : String
+'    meterPrice : double
+}
+
+class Roof {
+'    id : int
+'    name : String
+'    dimension : String
+'    description : String
+'    squareMeterPrice : double
+}
+
+' kun stk pris
+class Fittings {
+'    id : int
+'    name : String
+'    dimension : String
+'    description : String
+'    unitPrice : double
+}
+
+' kun pakke pris
+class Screws {
+'    id : int
+'    name : String
+'    dimension : String
+'    description : String
+'    packPrice : double
+}
+
+class User {
+'    id : int
+'    email : String
+'    password : String
+'    role : String
+'    name : String
+'    address : String
+'    zip : int
+'    city : String
+'    phoneNumber : String
+}
+
+class Order {
+'    id : int
+    status : String
+'    user : User
+'    carport : Carport
+'    remarks : String
+'    orderlines : List<int>
+'    created : String
+'    deliveryDate : String
+}
+
+class Carport {
+'    id : int
+'    width : int
+'    length : int
+'    height : int
+'    hasFlatRoof : boolean
+    shed : Shed
+'    description : String
+}
+
+class Shed {
+'    shedId : int
+'    ' MySQL carportId
+'    shedType : String
+'    shedLocation : String
+'    shedWidth : int
+'    shedLength : int
+}
+
+class OrderLine {
+'    id : int
+    material : Materials
+'    length : int
+'    amount : int
+'    price : double
+}
+
+' Enteties relations
+Materials --> Wood : Extends
+Materials --> Roof : Extends
+Materials --> Fittings : Extends
+Materials --> Screws : Extends
+
+User "1" -- "*" Order : Afgiver / Godkender
+Order "1" -- "*" OrderLine : Består af
+Order "1" -- "1" Carport : Indeholder
+Carport "1" -- "1" Shed : Kan indeholde
+OrderLine "1" -- "1" Materials : Indeholder
+
+@enduml

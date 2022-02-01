@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Carport_Domain:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>Carport_Domain</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="Carport_Domain-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Carport_Domain:war exploded" />
+    </root>
+  </artifact>
+</component>

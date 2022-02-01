@@ -1,0 +1,52 @@
+@startuml
+Title Cupcake Aktivitetsdiagram
+|Kunde|
+    start
+    :Gå til hjemmeside;
+    :Vælg carport type;
+    :Indtast dimensioner på carport,
+    vælg skur, og personlig information;
+    :Send forespørgsel;
+|#AntiqueWhite|System|
+    :Forespørgsel]
+
+|Admin|
+    :Modtag forespørgsel;
+    repeat
+    :Håndter forespørgsel;
+|System|
+    :Beregne omkostninger;
+|Admin|
+    :Send tilbud;
+|Kunde|
+    :Tilbud]
+    repeat while (Accepter / Afvis tilbud;) is (No)
+    ->Yes;
+    :Betal tilbud;
+|System|
+    :Modtag betaling;
+    :Ordre]
+|Admin|
+    :Håndter stykliste;
+    split
+|Kunde|
+    :Stykliste]
+|Admin|
+    split again
+    :Pakke ordre udfra stykliste;
+    :Sende pakkede ordre til kunde;
+    end split
+|Kunde|
+    :Pakkede ordre]
+    :Vælg byg self eller håndværker;
+    split
+|Kunde|
+    :Byg carport;
+|Admin|
+    split again
+    :Bestil håndværker;
+|Kunde|
+    split end
+    :Carport]
+stop
+@enduml

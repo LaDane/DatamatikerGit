@@ -2,6 +2,8 @@
 Title Domæne model
 
 ' Entities
+hide circle
+hide methods
 
 class BasketItem {
     cupcake : Cupcake
