@@ -1,16 +1,6 @@
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author usaw
- */
 class Main {
 
     static String greet(String s) {
@@ -40,7 +30,7 @@ class Main {
         }
         
         // Move shouted names to upNames
-        namesCopy = names;
+        namesCopy = new ArrayList<>(names);
         for (int i = 0; i < namesCopy.size(); i++) {
             if (namesCopy.get(i).toUpperCase().equals(namesCopy.get(i))) {
                 upNames.add(names.get(i));
