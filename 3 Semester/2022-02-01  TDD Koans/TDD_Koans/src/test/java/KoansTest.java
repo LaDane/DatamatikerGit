@@ -71,4 +71,34 @@ public class KoansTest {
         String actual = Main.greet(names);
         assertEquals(expected, actual);
     }
+    
+    // Requirement 6
+    @Test
+    public void nameArrayShoutTest() {
+        System.out.println("name array shout");
+        String[] names = {"Bob", "JIM", "Brian"};
+        String expected = "Hello, Bob and Brian. AND HELLO JIM!";
+        String actual = Main.greet(names);
+        assertEquals(expected, actual);
+    }
+    
+    // Requirement 7
+    @Test
+    public void nameArrayCommaTest() {
+        System.out.println("name array comma");
+        String[] names = {"Bob", "Charlie, Dianne"};
+        String expected = "Hello, Bob, Charlie, and Dianne.";
+        String actual = Main.greet(names);
+        assertEquals(expected, actual);
+    }
+    
+    // Requirement 8
+    @Test
+    public void nameArrayDoubleQuiteTest() {
+        System.out.println("name array double quote");
+        String[] names = {"Bob", "\"Charlie, Dianne\""};
+        String expected = "Hello, Bob and Charlie, Dianne.";
+        String actual = Main.greet(names);
+        assertEquals(expected, actual);
+    }
 }
