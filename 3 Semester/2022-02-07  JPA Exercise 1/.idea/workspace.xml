@@ -41,6 +41,7 @@
       <change beforePath="$PROJECT_DIR$/../2022-02-02  CI Actions/ci_actions-master/src/main/webapp/META-INF/context.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../2022-02-02  CI Actions/ci_actions-master/src/main/webapp/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../2022-02-02  CI Actions/ci_actions-master/src/test/java/ci/MyFunctionalityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644245416505</updated>
       <workItem from="1644245420194" duration="6897000" />
+      <workItem from="1645016298104" duration="332000" />
     </task>
     <servers />
   </component>
@@ -152,6 +154,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

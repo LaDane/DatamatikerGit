@@ -1,0 +1,14 @@
+GET http://localhost:8080/getRequests_war_exploded/3
+
+###
+
+POST http://localhost:8080/getRequests_war_exploded/customer
+Content-Type: application/json
+
+{
+  "firstName": "Karl",
+  "lastName": "Johansen"
+}
+
+###
+

@@ -1,0 +1,29 @@
+POST http://localhost:8080/getRequests_war_exploded/api/customer
+Content-Type: application/json
+
+{
+  "firstName": "Steve",
+  "lastName": "Lupi"
+}
+
+###
+
+GET http://localhost:8080/getRequests_war_exploded/api/customer/1
+
+###
+
+DELETE http://localhost:8080/getRequests_war_exploded/api/customer/1
+
+###
+
+PUT http://localhost:8080/getRequests_war_exploded/api/customer/11
+Content-Type: application/json
+
+{
+  "firstName": "Jens",
+  "lastName": "Johannson"
+}
+
+###
+
+GET http://localhost:8080/getRequests_war_exploded/api/customer/all
