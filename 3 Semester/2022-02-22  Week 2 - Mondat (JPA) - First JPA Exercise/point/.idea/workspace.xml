@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f6b74060-169f-40b8-a0f1-3f17c61e8705" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_commonj_sdo_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_eclipselink_2_7_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_jakarta_persistence_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/point.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_26.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_eclipse_persistence_commonj_sdo_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_eclipse_persistence_eclipselink_2_7_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_eclipse_persistence_jakarta_persistence_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/damo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/src/main/java/entity/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Monday (JPA) - JPA Setup Tutorial/src/main/java/entity/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_eclipse_persistence_commonj_sdo_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_eclipse_persistence_eclipselink_2_7_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_eclipse_persistence_jakarta_persistence_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/Exercise.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/src/main/java/entity/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/src/main/java/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/src/main/java/entity/Tester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/target/classes/entity/Address.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/target/classes/entity/Customer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../2022-02-22  Week 2 - Tuesday (JPA Relations) - JPA Relationships Exercise/Exercise/target/classes/entity/Tester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2022-02-22  EskeJonas/EskeJonas/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2022-02-22  EskeJonas/EskeJonas/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="25TPqJMo9FCV1PdvHNX9bi8KbKT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="point" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6b74060-169f-40b8-a0f1-3f17c61e8705" name="Changes" comment="" />
+      <created>1645548295057</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645548295057</updated>
+      <workItem from="1645548298677" duration="1675000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
