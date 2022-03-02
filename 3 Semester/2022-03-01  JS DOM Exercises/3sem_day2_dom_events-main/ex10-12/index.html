@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Using map and filter to create dynamic table-rows</title>
+</head>
+
+<body>
+    <script src="script10-12.js"></script>
+    <!-- <script>onClick(elem);</script> -->
+
+    <ul id="nameList" class="list-group">
+
+    </ul>
+    
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputName" class="sr-only">Name</label>
+          <input id="inputField" type="text" class="form-control" id="inputName" placeholder="">
+        </div>
+        <button onclick="onClick('#inputField')" id="inputButton" type="submit" class="btn btn-primary mb-2 inputButton">Add name</button>
+    </form>
+    <br>
+    <form class="form-inline">
+        <button onclick="onClickRemoveFirst()" id="inputButton" type="submit" class="btn btn-primary mb-2 inputButton">Remove first</button>
+    </form>
+    <br>
+    <form class="form-inline">
+        <button onclick="onClickRemoveList()" id="inputButton" type="submit" class="btn btn-primary mb-2 inputButton">Remove last</button>
+    </form>
+
+
+</body>
+</html>
