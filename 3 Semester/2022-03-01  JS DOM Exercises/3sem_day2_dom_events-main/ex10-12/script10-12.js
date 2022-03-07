@@ -32,8 +32,6 @@ function updateList() {
     });
 }
 
-
-
 function addListElement(firstname) {
     const nameList = document.getElementById('nameList');
     
