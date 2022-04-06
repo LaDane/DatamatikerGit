@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
 //Perhaps this you go into a separate file
 class PingURL implements Callable<String> {
   String url;
-  
+
   PingURL(String url) {
     this.url = url;
   }
