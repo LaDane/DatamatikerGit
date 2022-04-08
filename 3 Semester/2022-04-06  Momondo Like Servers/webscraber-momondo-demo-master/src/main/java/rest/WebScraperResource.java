@@ -30,12 +30,14 @@ public class WebScraperResource {
         long endTime = System.nanoTime()-startTime;
         return TagDTO.getTagsAsJson("Sequental fetching",dataFeched, endTime);
     }
+
     @Path("parallel")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getTagsParrallel() {
-        return "[Make me return results, fetched by a parrallel strategy";
+    public String getTagsParrallel() throws Exception {
+        long startTime = System.nanoTime();
+        List<TagCounter> dataFeched = Tester.runParrallel();
+        long endTime = System.nanoTime()-startTime;
+        return TagDTO.getTagsAsJson("Parallel fetching",dataFeched, endTime);
     }
-    
-    
 }

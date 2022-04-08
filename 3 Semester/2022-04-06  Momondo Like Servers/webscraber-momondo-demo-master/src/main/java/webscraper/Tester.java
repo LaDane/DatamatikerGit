@@ -41,13 +41,6 @@ public class Tester {
         timeSequental = end - start;
         System.out.println("Time Sequential: " + ((timeSequental) / 1_000_000) + " ms.");
 
-//        for (TagCounter tc : fetchedData) {
-//            System.out.println("Title: " + tc.getTitle());
-//            System.out.println("Div's: " + tc.getDivCount());
-//            System.out.println("Body's: " + tc.getBodyCount());
-//            System.out.println("----------------------------------");
-//        }
-
         // Parallel
         start = System.nanoTime();
 
