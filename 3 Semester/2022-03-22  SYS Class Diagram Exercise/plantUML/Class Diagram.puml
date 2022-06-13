@@ -1,0 +1,72 @@
+@startuml
+
+class School {
+    List<Room> rooms
+    List<Class> classes
+    List<Subject> subjects
+    List<Teacher> teachers
+    List<Student> students
+}
+
+class Room {
+    School school
+    List<Subjects> subjects
+}
+
+class Teacher {
+    School school
+    List<Subject> subjects
+
+    prepareTest()
+    puplishTest()
+    receiveTest()
+    checkTestTime()
+    checkTestCopiedContent()
+    gradeTest()
+    rejectTest()
+    releaseReport()
+}
+
+class Subject {
+    School school
+    List<Student> students
+    List<Teacher> teachers
+    List<Class> classes
+    List<Room> rooms
+}
+
+class Class {
+    School school
+    List<Student> students
+    List<Subject> subjects
+    List<Room> rooms
+}
+
+class Student {
+    School school
+    List<Subject> subjects
+    List<Class> classes
+
+    receiveTestPaper()
+    takeTest()
+    handInTest()
+}
+
+
+'Relations
+Subject "*"*--"1" School
+Subject "*"*-*"*" Room
+Subject "*"*-*"*" Class
+
+Room "*"*--"1" School
+
+Class "*"*--"1" School
+
+Teacher "*"*-*"*" Subject
+Teacher "*"*--"1" School
+
+Student "*"*-*"*" Subject
+Student "*"*-*"*" Class
+Student "*"*--"1" School
+
+@enduml
